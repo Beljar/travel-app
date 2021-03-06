@@ -1,0 +1,36 @@
+[
+  {
+    "id": "1",
+    "imageUrl": "california.jpg",
+    "videoUrl": "california.mpeg4",
+    "currency": "dollar",
+    "ISOCode": "ca", //unique field
+    "capitalLocation": {
+      "type": "Point",
+      "coordinates": [
+        1.25,
+        154.15
+      ]
+    },
+    "localizations": [
+      {
+        "lang": "ru",
+        "name": "калифорния",
+        "description": "Калифорния, расположенная на западе США, простирается вдоль Тихого океана от границы со штатом Орегон до мексиканской границы почти на 1400 км. Ее рельеф очень разнообразен: здесь находятся окруженные скалами пляжи, леса секвойи, горы Сьерра-Невада, сельскохозяйственные земли Калифорнийской долины и пустыня Мохаве. Наиболее интересный туристам район Лос-Анджелеса – Голливуд, столица американской киноиндустрии. Город Сан-Франциско получил всемирную известность благодаря мосту Золотые Ворота, острову Алькатрас и канатному трамваю.",
+        "capital": "Сакраменто"
+      },
+      {
+        "lang": "en",
+        "name": "california",
+        "description": "California, located in the western United States, stretches along the Pacific Ocean from the Oregon border to the Mexican border for nearly 1,400 km. Its topography is very varied: there are cliff-lined beaches, sequoia forests, the Sierra Nevada Mountains, the agricultural lands of the California Valley, and the Mojave Desert. The most interesting part of Los Angeles for tourists is Hollywood, the capital of the American movie industry. The city of San Francisco is world famous for the Golden Gate Bridge, Alcatraz Island, and the aerial streetcar.",
+        "capital": "sacramento"
+      },
+      {
+        "lang": "bel",
+        "name": "каліфорнія",
+        "description": "Каліфорнія, размешчаная на захадзе ЗША, цягнецца ўздоўж Ціхага акіяна ад мяжы з Арэгонам да мексіканскай мяжы амаль на 1400 км. Рэльеф яго вельмі разнастайны: ёсць высаджаныя скаламі пляжы, лясы секвойі, горы Сьера-Невада, сельскагаспадарчыя ўгоддзі Каліфарнійскай даліны і пустыня Махавэ. Самая цікавая для турыстаў частка Лос-Анджэлеса - Галівуд, сталіца амерыканскай кінаіндустрыі. Горад Сан-Францыска на ўвесь свет вядомы мостам Залатыя Вароты, востравам Алькатрас і паветраным трамваем.",
+        "capital": "сакрамента"
+      }
+    ]
+  }
+]

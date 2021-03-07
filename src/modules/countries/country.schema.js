@@ -2,6 +2,7 @@ const { Schema, model } = require('mongoose');
 
 const localeSchema = new Schema({
   _id: false,
+  lang: String,
   name: {
     type: String,
     required: true,
@@ -44,5 +45,6 @@ const countrySchema = new Schema({
 });
 
 const Country = model('Country', countrySchema);
+const Locale = model('Locale', localeSchema);
 
-module.exports = Country;
+module.exports = { Country, Locale };

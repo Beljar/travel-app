@@ -1,4 +1,4 @@
-const Country = require('./country.schema');
+const { Country } = require('./country.schema');
 const { NotFoundError } = require('../../common/errors/errors-list');
 const { ENTITY_NAME } = require('./constants');
 const {

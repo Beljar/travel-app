@@ -2,7 +2,8 @@ const mongoose = require('mongoose');
 const { MONGO_CONNECTION_STRING } = require('../config');
 const logger = require('../logging/logger');
 
-const connectToDB = () => {
+const connectToDB = (cb) => {
+  console.log(MONGO_CONNECTION_STRING);
   mongoose
     .connect(MONGO_CONNECTION_STRING, {
       useNewUrlParser: true,
@@ -15,6 +16,7 @@ const connectToDB = () => {
   db.once('open', () => {
     logger.info('Mongo connection successfully!');
   });
+  cb();
 };
 
 module.exports = { connectToDB };

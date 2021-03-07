@@ -198,3 +198,18 @@
   level: 'info',
   timestamp: '2021-03-07T01:12:42.928Z'
 }
+{
+  message: 'Mongo connection successfully!',
+  level: 'info',
+  timestamp: '2021-03-07T01:12:57.104Z'
+}
+{
+  message: '\u001b[0mGET /countries \u001b[32m200\u001b[0m 70.427 ms - 805\u001b[0m',
+  level: 'info',
+  timestamp: '2021-03-07T01:13:01.409Z'
+}
+{
+  message: '\u001b[0mGET /favicon.ico \u001b[32m204\u001b[0m 0.541 ms - -\u001b[0m',
+  level: 'info',
+  timestamp: '2021-03-07T01:13:01.609Z'
+}

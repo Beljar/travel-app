@@ -2,34 +2,248 @@
   {
     "id": "1",
     "imageUrl": "california.jpg",
-    "videoUrl": "california.mpeg4",
-    "currency": "dollar",
-    "ISOCode": "ca",
+    "videoUrl": "https://youtu.be/oxB8hFDE6GU",
+    "currency": "USD", 
+    "ISOCode": "CA",
     "capitalLocation": {
       "type": "Point",
-      "coordinates": [
-        1.25,
-        154.15
-      ]
+      "coordinates": [36.77, -119.41]
     },
     "localizations": [
       {
-        "lang": "ru",
-        "name": "калифорния",
-        "description": "Калифорния, расположенная на западе США, простирается вдоль Тихого океана от границы со штатом Орегон до мексиканской границы почти на 1400 км. Ее рельеф очень разнообразен: здесь находятся окруженные скалами пляжи, леса секвойи, горы Сьерра-Невада, сельскохозяйственные земли Калифорнийской долины и пустыня Мохаве. Наиболее интересный туристам район Лос-Анджелеса – Голливуд, столица американской киноиндустрии. Город Сан-Франциско получил всемирную известность благодаря мосту Золотые Ворота, острову Алькатрас и канатному трамваю.",
-        "capital": "Сакраменто"
+        "lang":"ru",
+        "name":"калифорния",
+        "description":"Калифорния, расположенная на западе США, простирается вдоль Тихого океана от границы со штатом Орегон до мексиканской границы почти на 1400 км. Ее рельеф очень разнообразен: здесь находятся окруженные скалами пляжи, леса секвойи, горы Сьерра-Невада, сельскохозяйственные земли Калифорнийской долины и пустыня Мохаве. Наиболее интересный туристам район Лос-Анджелеса – Голливуд, столица американской киноиндустрии. Город Сан-Франциско получил всемирную известность благодаря мосту Золотые Ворота, острову Алькатрас и канатному трамваю.",
+        "capital":"Сакраменто"
       },
       {
-        "lang": "en",
-        "name": "california",
-        "description": "California, located in the western United States, stretches along the Pacific Ocean from the Oregon border to the Mexican border for nearly 1,400 km. Its topography is very varied: there are cliff-lined beaches, sequoia forests, the Sierra Nevada Mountains, the agricultural lands of the California Valley, and the Mojave Desert. The most interesting part of Los Angeles for tourists is Hollywood, the capital of the American movie industry. The city of San Francisco is world famous for the Golden Gate Bridge, Alcatraz Island, and the aerial streetcar.",
-        "capital": "sacramento"
+        "lang":"en",
+        "name":"california",
+        "description":"California, located in the western United States, stretches along the Pacific Ocean from the Oregon border to the Mexican border for nearly 1,400 km. Its topography is very varied: there are cliff-lined beaches, sequoia forests, the Sierra Nevada Mountains, the agricultural lands of the California Valley, and the Mojave Desert. The most interesting part of Los Angeles for tourists is Hollywood, the capital of the American movie industry. The city of San Francisco is world famous for the Golden Gate Bridge, Alcatraz Island, and the aerial streetcar.",
+        "capital":"sacramento"
       },
       {
-        "lang": "bel",
-        "name": "каліфорнія",
-        "description": "Каліфорнія, размешчаная на захадзе ЗША, цягнецца ўздоўж Ціхага акіяна ад мяжы з Арэгонам да мексіканскай мяжы амаль на 1400 км. Рэльеф яго вельмі разнастайны: ёсць высаджаныя скаламі пляжы, лясы секвойі, горы Сьера-Невада, сельскагаспадарчыя ўгоддзі Каліфарнійскай даліны і пустыня Махавэ. Самая цікавая для турыстаў частка Лос-Анджэлеса - Галівуд, сталіца амерыканскай кінаіндустрыі. Горад Сан-Францыска на ўвесь свет вядомы мостам Залатыя Вароты, востравам Алькатрас і паветраным трамваем.",
-        "capital": "сакрамента"
+        "lang":"bel",
+        "name":"каліфорнія",
+        "description":"Каліфорнія, размешчаная на захадзе ЗША, цягнецца ўздоўж Ціхага акіяна ад мяжы з Арэгонам да мексіканскай мяжы амаль на 1400 км. Рэльеф яго вельмі разнастайны: ёсць высаджаныя скаламі пляжы, лясы секвойі, горы Сьера-Невада, сельскагаспадарчыя ўгоддзі Каліфарнійскай даліны і пустыня Махавэ. Самая цікавая для турыстаў частка Лос-Анджэлеса - Галівуд, сталіца амерыканскай кінаіндустрыі. Горад Сан-Францыска на ўвесь свет вядомы мостам Залатыя Вароты, востравам Алькатрас і паветраным трамваем.",
+        "capital":"сакрамента"
+      }
+    ]
+  },
+  {
+    "id": "2",
+    "imageUrl": "spain.jpg",
+    "videoUrl": "https://youtu.be/DpUTWLsPJeY",
+    "currency": "EUR", 
+    "ISOCode": "ESP",
+    "capitalLocation": {
+      "type": "Point",
+      "coordinates": [40.24, 3.42]
+    },
+    "localizations": [
+      {
+        "lang":"ru",
+        "name":"испания",
+        "description":"Испания – европейская страна, расположенная на Пиренейском полуострове. Территория Испании разделена на 17 автономных регионов. В столице страны, Мадриде, находятся Королевский дворец и музей Прадо, где хранятся произведения европейских мастеров. В Сеговии можно посетить средневековый замок (Алькасар) и увидеть хорошо сохранившийся римский акведук. Барселона – столица автономного сообщества Каталония. Облик этого города определяют многочисленные причудливо-фантастические творения архитектора Антонио Гауди, среди которых храм Святого Семейства.",
+        "capital":"Мадрид"
+      },
+      {
+        "lang":"en",
+        "name":"spain",
+        "description":"Spain is a European country located on the Iberian Peninsula. The territory of Spain is divided into 17 autonomous regions. The capital, Madrid, has the Royal Palace and Museum of the Prado, which contains works of European masters. In Segovia you can visit the medieval castle (Alcázar) and see the well-preserved Roman aqueduct. Barcelona is the capital of the autonomous community of Catalonia. The image of this city is defined by numerous whimsical and fantastic creations of architect Antonio Gaudi, including the Temple of the Holy Family.",
+        "capital":"Madrid"
+      },
+      {
+        "lang":"bel",
+        "name":"Іспанія",
+        "description":"Іспанія - еўрапейская краіна, размешчаная на Пірэнэйскім паўвостраве. Тэрыторыя Іспаніі падзелена на 17 аўтаномных рэгіёнаў. У сталіцы Мадрыда ёсць Каралеўскі палац і музей Прадо, дзе захоўваюцца творы еўрапейскіх майстроў. У Сеговіі вы можаце наведаць сярэднявечны замак (Алькасар) і ўбачыць добра захаваны рымскі вадавод. Барселона - сталіца аўтаномнай супольнасці Каталонія. Вобраз гэтага горада вызначаюць шматлікія мудрагелістыя і фантастычныя творы архітэктара Антоніа Гаўдзі, у тым ліку Храм Святой Сям\"і.",
+        "capital":"Мадрыд"
+      }
+    ]
+  },
+  {
+    "id": "3",
+    "imageUrl": "paris.jpg",
+    "videoUrl": "https://youtu.be/72kRM86V-dw",
+    "currency": "EUR",
+    "ISOCode": "FR",
+    "capitalLocation": {
+      "type": "Point",
+      "coordinates": [46.22, 2.21]
+    },
+    "localizations": [
+      {
+        "lang":"ru",
+        "name":"париж",
+        "description":"Столица Франции Париж – один из главных европейских городов и мировой центр культуры, искусства, моды и гастрономии. В центральной части города, построенной в XIX веке, проходят широкие бульвары и протекает река Сена. Самые известные достопримечательности Парижа – Эйфелева башня и собор Парижской Богоматери в готическом стиле, возведенный в XII веке. Также город славится своими многочисленными кафе и бутиками с одеждой от известных модельеров на улице Фобур-Сент-Оноре",
+        "capital":"Франция"
+      },
+      {
+        "lang":"en",
+        "name":"paris",
+        "description":"The capital of France, Paris is one of the major European cities and a world center of culture, art, fashion and gastronomy. The central part of the city, built in the 19th century, has wide boulevards and runs the river Seine. The most famous attractions in Paris are the Eiffel Tower and the Cathedral of Notre Dame in the Gothic style built in the 12th century. Also the city is famous for its numerous cafes and boutiques with clothes from famous fashion designers on the rue du Faubourg Saint-Honoré",
+        "capital":"france"
+      },
+      {
+        "lang":"bel",
+        "name":"парыж",
+        "description":"Сталіца Францыі Парыж - адзін з буйных еўрапейскіх гарадоў і сусветны цэнтр культуры, мастацтва, моды і гастраноміі. Цэнтральная частка горада, пабудаваная ў 19 стагоддзі, мае шырокія бульвары і цячэ па рацэ Сене. Самыя вядомыя славутасці Парыжа - Эйфелева вежа і сабор Нотр-Дам у гатычным стылі, пабудаваныя ў 12 стагоддзі. Таксама горад славіцца шматлікімі кавярнямі і буцікамі з адзеннем знакамітых мадэльераў на вуліцы Фабур Сен-Анарэ",
+        "capital":"Францыя"
+      }
+    ]
+  },
+  {
+    "id": "4",
+    "imageUrl": "anglia.jpg",
+    "videoUrl": "https://youtu.be/X8zLJlU_-60",
+    "currency": "GBP",
+    "ISOCode": "GB",
+    "capitalLocation": {
+      "type": "Point",
+      "coordinates": [52.35, -1.17]
+    },
+    "localizations": [
+      {
+        "lang":"ru",
+        "name":"Англия",
+        "description":"Англия, родина Шекспира и группы The Beatles, входит в состав Соединенного Королевства Великобритании и Северной Ирландии. Она расположена на Британских островах и граничит с Шотландией и Уэльсом. Столица Англии Лондон – современный многонациональный город на реке Темзе, деловой и культурный центр страны. Он получил всемирную известность благодаря зданию Парламента, башне Биг-Бен и крепости Тауэр XI века. Другие крупные города Англии – Манчестер, Бирмингем, Ливерпуль и Бристоль, а также Оксфорд и Кембридж с их знаменитыми университетами.",
+        "capital":"Лондон"
+      },
+      {
+        "lang":"en",
+        "name":"England",
+        "description":"England, home of Shakespeare and The Beatles, is part of the United Kingdom of Great Britain and Northern Ireland. It is located in the British Isles and borders Scotland and Wales. The capital of England, London is a modern multicultural city on the River Thames, the business and cultural center of the country. It is world famous for the Houses of Parliament, Big Ben and the Tower of the 11th century. Other major cities in England are Manchester, Birmingham, Liverpool and Bristol, as well as Oxford and Cambridge with their famous universities.",
+        "capital":"London"
+      },
+      {
+        "lang":"bel",
+        "name":"Англія",
+        "description":"Англія, дом Шэкспіра і 'Бітлз', з'яўляецца часткай Злучанага Каралеўства Вялікабрытаніі і Паўночнай Ірландыі. Ён размешчаны на Брытанскіх выспах і мяжуе з Шатландыяй і Уэльсам. Сталіца Англіі Лондан - сучасны мультыкультурны горад на рацэ Тэмзе, дзелавы і культурны цэнтр краіны. Сусветна вядомы Дамамі парламента, Біг-Бэнам і Вежай XI стагоддзя. Іншыя буйныя гарады Англіі - Манчэстэр, Бірмінгем, Ліверпуль і Брыстоль, а таксама Оксфард і Кембрыдж з іх вядомымі універсітэтамі.",
+        "capital":"Лондан"
+      }
+    ]
+  },
+  {
+    "id": "5",
+    "imageUrl": "rome.jpg",
+    "videoUrl": "https://youtu.be/9Vs5lDfeqM4",
+    "currency": "EUR", 
+    "ISOCode": "IT",
+    "capitalLocation": {
+      "type": "Point",
+      "coordinates": [41.87, 12.56]
+    },
+    "localizations": [
+      {
+        "lang":"ru",
+        "name":"Италия",
+        "description":"Рим – столица Италии, огромный многонациональный город, история которого насчитывает почти три тысячи лет. Его архитектура и произведения искусства оказали огромное влияние на мировую культуру. Развалины античного Форума и Колизея демонстрируют былое величие Римской империи. Ватикан, резиденция руководства Римско-католической церкви, пользуется огромной популярностью у туристов благодаря собору Святого Петра и многочисленным музеям. Среди них – Сикстинская капелла, где можно увидеть знаменитые фрески Микеланджело.",
+        "capital":"Рим"
+      },
+      {
+        "lang":"en",
+        "name":"Italy",
+        "description":"Rome is the capital of Italy, a huge cosmopolitan city with a history of almost three thousand years. Its architecture and works of art have had an enormous influence on world culture. The ruins of the ancient Forum and the Colosseum demonstrate the former greatness of the Roman Empire. The Vatican, the seat of leadership of the Roman Catholic Church, is hugely popular with tourists thanks to St. Peter's Cathedral and numerous museums. Among them is the Sistine Chapel, where you can see the famous frescoes by Michelangelo.",
+        "capital":"Rome"
+      },
+      {
+        "lang":"bel",
+        "name":"Італія",
+        "description":"Рым - сталіца Італіі, велізарны касмапалітычны горад з амаль трохтысячагадовай гісторыяй. Яго архітэктура і творы мастацтва аказалі велізарны ўплыў на сусветную культуру. Руіны старажытнага Форума і Калізея дэманструюць былое веліч Рымскай імперыі. Ватыкан, рэзідэнцыя рымска-каталіцкай царквы, карыстаецца вялікай папулярнасцю ў турыстаў дзякуючы сабору Святога Пятра і шматлікім музеям. Сярод іх - Сікстынская капэла, дзе можна ўбачыць знакамітыя фрэскі Мікеланджэла.",
+        "capital":"рым"
+      }
+    ]
+  },
+  {
+    "id": "6",
+    "imageUrl": "Norway.jpg",
+    "videoUrl": "https://youtu.be/wnKHtpJiRNo",
+    "currency": "NOK",
+    "ISOCode": "NO",
+    "capitalLocation": {
+      "type": "Point",
+      "coordinates": [59.91, 10.75]
+    },
+    "localizations": [
+      {
+        "lang":"ru",
+        "name":"Норвегия",
+        "description":"Норве́гия, официальное название — Короле́вство Норве́гия — государство в Северной Европе, располагающееся в западной части Скандинавского полуострова и на огромном количестве прилегающих мелких островов, а также архипелаге Шпицберген, островах Ян-Майен и Медвежий в Северном Ледовитом океане.",
+        "capital":"Осло"
+      },
+      {
+        "lang":"en",
+        "name":"Norway",
+        "description":"Norway, officially known as the Kingdom of Norway, is a state in Northern Europe, located in the western part of the Scandinavian Peninsula and on the vast number of small adjacent islands, as well as the Svalbard Archipelago, Jan Mayen and Bear Islands in the Arctic Ocean.",
+        "capital":"Oslo"
+      },
+      {
+        "lang":"bel",
+        "name":"Нарвегія",
+        "description":"Нарвегія, афіцыйна вядомая як Каралеўства Нарвегія, - гэта дзяржава ў Паўночнай Еўропе, размешчаная ў заходняй частцы Скандынаўскага паўвострава і на велізарнай колькасці невялікіх прылеглых астравоў, а таксама архіпелаг Шпіцберген, Ян-Майен і Мядзведжыя астравы ў Ледавіты акіян.",
+        "capital":"Осла"
+      }
+    ]
+  },
+  {
+    "id": "7",
+    "imageUrl": "germany.jpg",
+    "videoUrl": "https://youtu.be/SO9tUbxIIWU",
+    "currency": "EUR",
+    "ISOCode": "DE",
+    "capitalLocation": {
+      "type": "Point",
+      "coordinates": [52.52, 13.40]
+    },
+    "localizations": [
+      {
+        "lang":"ru",
+        "name":"Германия",
+        "description":"Германия – государство в Западной Европе с лесами, реками, горными хребтами и пляжными курортами Северного моря. История страны охватывает период в более чем две тысячи лет. В столице, Берлине, кипит культурная и ночная жизнь. Многие достопримечательности города, в частности Бранденбургские ворота, напоминают о событиях Второй мировой войны. Мюнхен знаменит фестивалем Октоберфест и пивными ресторанами. Самый известный из них – 'Хофбройхаус', открывшийся ещё в XVI веке. Франкфурт – город небоскребов, именно здесь находится штаб-квартира Европейского центрального банка.",
+        "capital":"Берлин"
+      },
+      {
+        "lang":"en",
+        "name":"Germany",
+        "description":"Germany is a state in Western Europe with forests, rivers, mountain ranges, and North Sea beach resorts. Its history spans more than two thousand years. The capital, Berlin, has a vibrant cultural and nightlife scene. Many sights, such as the Brandenburg Gate, recall the events of World War II. Munich is famous for its Oktoberfest and beer restaurants. The most famous is Hofbräuhaus, which opened back in the 16th century. Frankfurt is the city of skyscrapers and it is here that the headquarters of the European Central Bank is located.",
+        "capital":"Berlin"
+      },
+      {
+        "lang":"bel",
+        "name":"Германія",
+        "description":"Германія - дзяржава ў Заходняй Еўропе з лясамі, рэкамі, горнымі масівамі і пляжнымі курортамі Паўночнага мора. Яго гісторыя налічвае больш за дзве тысячы гадоў. У сталіцы Берліне жывая культурная і начная жыццё. Многія славутасці, такія як Брандэнбургскія вароты, успамінаюць падзеі Другой сусветнай вайны. Мюнхен славіцца Актоберфестам і піўнымі рэстаранамі. Самы вядомы - Хофбройхаўз, які адкрыўся яшчэ ў 16 стагоддзі. Франкфурт - горад хмарачосаў, і тут знаходзіцца штаб-кватэра Еўрапейскага цэнтральнага банка.",
+        "capital":"Берлін"
+      }
+    ]
+  },
+  {
+    "id": "8",
+    "imageUrl": "canada.jpg",
+    "videoUrl": "https://youtu.be/7D-ERddm9J4",
+    "currency": "EUR",
+    "ISOCode": "CAD",
+    "capitalLocation": {
+      "type": "Point",
+      "coordinates": [45.42, -75.69]
+    },
+    "localizations": [
+      {
+        "lang":"ru",
+        "name":"Канада",
+        "description":"Канада – североамериканская страна, простирающаяся от границы с США на юге до полярного круга на севере. Крупнейшие города – многолюдный Торонто, расположенный на западном побережье центр киноиндустрии Ванкувер, франкоязычные Монреаль и Квебек и столица страны Оттава. Значительную часть Канады занимают территории с дикой природой, в том числе национальный парк Банф в Скалистых горах со множеством озер. Кроме того, здесь находится всемирно известный Ниагарский водопад.",
+        "capital":"Оттава"
+      },
+      {
+        "lang":"en",
+        "name":"Canada",
+        "description":"Canada is a North American country stretching from the U.S. border in the south to the Arctic Circle in the north. Major cities include crowded Toronto, the west coast center of the movie industry Vancouver, French-speaking Montreal and Quebec City, and the capital Ottawa. Much of Canada is made up of wilderness areas, including Banff National Park in the Rocky Mountains with its many lakes. It is also home to the world-famous Niagara Falls.",
+        "capital":"Ottawa"
+      },
+      {
+        "lang":"bel",
+        "name":"Канада",
+        "description":"Канада - паўночнаамерыканская краіна, якая цягнецца ад мяжы з ЗША на поўдні да Палярнага круга на поўначы. Сярод буйных гарадоў - шматлюдны Таронта, цэнтр кінаіндустрыі на заходнім узбярэжжы, Ванкувер, франкамоўныя Манрэаль і Квебек, а таксама сталіца Атава. Большая частка Канады складаецца з пустынных раёнаў, уключаючы Нацыянальны парк Банф у Скалістых гарах з мноствам азёр. Тут таксама пражывае сусветна вядомы Ніягарскі вадаспад.",
+        "capital":"Атава"
       }
     ]
   }

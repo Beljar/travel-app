@@ -213,3 +213,38 @@
   level: 'info',
   timestamp: '2021-03-07T01:13:01.609Z'
 }
+{
+  message: 'Mongo connection successfully!',
+  level: 'info',
+  timestamp: '2021-03-08T13:02:53.976Z'
+}
+{
+  message: 'Mongo connection successfully!',
+  level: 'info',
+  timestamp: '2021-03-08T15:03:05.309Z'
+}
+{
+  message: 'Mongo connection successfully!',
+  level: 'info',
+  timestamp: '2021-03-08T15:08:55.021Z'
+}
+{
+  message: 'Mongo connection successfully!',
+  level: 'info',
+  timestamp: '2021-03-08T15:13:12.746Z'
+}
+{
+  message: 'Mongo connection successfully!',
+  level: 'info',
+  timestamp: '2021-03-08T15:18:37.027Z'
+}
+{
+  message: 'Mongo connection successfully!',
+  level: 'info',
+  timestamp: '2021-03-08T15:20:48.472Z'
+}
+{
+  message: 'Mongo connection successfully!',
+  level: 'info',
+  timestamp: '2021-03-08T15:22:08.529Z'
+}

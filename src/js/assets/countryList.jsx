@@ -1,42 +1,50 @@
 const countryList = [
     {
         url: "britain.jpg",
-        country: "Great Britain"
+        country: "Great Britain",
+        capital: "London"
     },
 
     {
         url: "canada.jpg",
-        country: "Canada"
+        country: "Canada",
+        capital: "Ottava"
     },
 
     {
         url: "france.jpg",
-        country: "France"
+        country: "France",
+        capital: "Paris"
     },
 
     {
         url: "germany.jpg",
-        country: "Germany"
+        country: "Germany",
+        capital: "Berlin"
     },
 
     {
         url: "italy.jpg",
-        country: "Italy"
+        country: "Italy",
+        capital: "Rome"
     },
 
     {   
         url: "norway.jpg",
-        country: "Norway"
+        country: "Norway",
+        capital: "Oslo"
     },
 
     {   
         url: "spain.jpg",
-        country: "Spain"
+        country: "Spain",
+        capital: "Madrid"
     },
 
     {
         url: "usa.jpg",
-        country: "United States of America"
+        country: "United States of America",
+        capital: "Washington DC"
     }
 ]
 

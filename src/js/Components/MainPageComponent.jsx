@@ -22,6 +22,7 @@ const MainPage = () => {
                 <img className="countryImage" src={"src/js/assets/mainPageCountry/" + image.url} width="300px" height="200px" />
                 <div className="cardHover">
                     <div className="text">{image.country}</div>
+                    <div className="text">{image.capital}</div>
                 </div>
             </div>
         )

@@ -4,6 +4,7 @@ import axios from 'axios';
 import Container from './container/container.jsx';
 import CountryInfo from './country-info/country-info.jsx';
 import capitalize from '../utils/capitalize';
+import VideoPlayer from './video-player/video-player.jsx';
 
 const { Header, Footer, Content } = Layout;
 
@@ -45,6 +46,7 @@ export default class CountryPage extends Component {
                 imgUrl='https://images.unsplash.com/photo-1501594907352-04cda38ebc29?ixid=MXwxMjA3fDB8MHxzZWFyY2h8M3x8Y2FsaWZvcm5pYXxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60'
                 description={this.state.description}
               />
+              <VideoPlayer style={{ marginTop: 40 }} url={this.state.videoUrl} width='100%' />
             </Container>
           </Content>
           <Layout></Layout>

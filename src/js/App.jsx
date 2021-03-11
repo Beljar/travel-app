@@ -1,8 +1,10 @@
 import React from 'react';
 import ReactDom from 'react-dom';
+import 'antd/dist/antd.css';
+import CountryPage from './Components/CountryPageComponent.jsx';
 
 function App() {
-  return <div>Travel app is running</div>;
+  return <CountryPage />;
 }
 
 ReactDom.render(<App />, document.querySelector('#main'));

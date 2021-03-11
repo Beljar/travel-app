@@ -5,6 +5,7 @@ import Container from './container/container.jsx';
 import CountryInfo from './country-info/country-info.jsx';
 import capitalize from '../utils/capitalize';
 import VideoPlayer from './video-player/video-player.jsx';
+import Gallery from './gallery/gallery.jsx';
 
 const { Header, Footer, Content } = Layout;
 
@@ -47,6 +48,17 @@ export default class CountryPage extends Component {
                 description={this.state.description}
               />
               <VideoPlayer style={{ marginTop: 40 }} url={this.state.videoUrl} width='100%' />
+              <Gallery
+                style={{ marginTop: 40 }}
+                items={this.state.places.map((place) => ({
+                  original:
+                    'https://images.unsplash.com/photo-1522961364055-ae8ee2526003?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80',
+                  thumbnail:
+                    'https://images.unsplash.com/photo-1522961364055-ae8ee2526003?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80',
+                  originalTitle: place.name,
+                  description: place.description,
+                }))}
+              />
             </Container>
           </Content>
           <Layout></Layout>

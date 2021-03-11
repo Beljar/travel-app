@@ -1,0 +1,20 @@
+.modal-container {
+  position: relative;
+}
+
+.modal {
+  margin: auto;
+}
+
+.shader {
+  display: flex;
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.267);
+}
+
+.hidden {
+  display: none;
+}

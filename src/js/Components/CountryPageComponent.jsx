@@ -6,6 +6,7 @@ import CountryInfo from './country-info/country-info.jsx';
 import capitalize from '../utils/capitalize';
 import VideoPlayer from './video-player/video-player.jsx';
 import Gallery from './gallery/gallery.jsx';
+import Sidebar from './sidebar/sidebar.jsx';
 
 const { Header, Footer, Content } = Layout;
 
@@ -61,7 +62,9 @@ export default class CountryPage extends Component {
               />
             </Container>
           </Content>
-          <Layout></Layout>
+          <Layout>
+            <Sidebar />
+          </Layout>
         </Layout>
         <Footer style={{ zIndex: 9999, backgroundColor: '#e43d1a' }}>Footer</Footer>
       </Layout>

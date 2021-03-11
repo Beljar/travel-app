@@ -28,6 +28,10 @@ const countryRouter = require('./modules/countries/country.router');
 
 app.use('/countries', countryRouter);
 
+const userRouter = require('./modules/user/user.router');
+
+app.use('/users', userRouter);
+
 app.use((req, res) => {
   res.status(StatusCodes.NOT_IMPLEMENTED).send(ReasonPhrases.NOT_IMPLEMENTED);
 });

@@ -7,8 +7,12 @@ class LoginWindow extends Component {
   }
 
   render() {
-    return <div>
-      login window
+    return <div className=''>
+      <form className='form'>
+      <input type="text" id="email" name="email" placeholder="Your e-mail"></input>
+      <input type="text" id="password" name="password" placeholder="Password"></input>
+      </form>
+      <div className='btn'>Login</div>
     </div>
   }
 }

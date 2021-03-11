@@ -4,6 +4,11 @@ class ModalWindow extends Component {
   static getDerivedStateFromProps(props, state) {
     console.log('modal update');
     console.log(props);
+    if (props.show) {
+      document.querySelector('body').classList.add('no-scroll');
+    } else{
+      document.querySelector('body').classList.remove('no-scroll');
+    }
     return {
       show: props.show,
     };
@@ -22,7 +27,7 @@ class ModalWindow extends Component {
     console.log(ModalComponent);
     return <div className={(this.state.show) ? 'shader' : 'hidden'}>
       <div className='modal'>
-        <div onClick={this.props.close}>close</div>
+        <div onClick={this.props.close} className='modal__close'>X</div>
         <ModalComponent />
         </div>
         </div>;

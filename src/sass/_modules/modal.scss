@@ -4,6 +4,23 @@
 
 .modal {
   margin: auto;
+  position: relative;
+  padding: 30px;
+  background-color: white;
+  .btn {
+    padding: 5px;
+    background-color: rgb(86, 86, 233);
+    text-align: center;
+    color: white;
+  }
+  .btn:hover {
+    background-color: rgb(110, 110, 199);
+  }
+  .modal__close {
+    position: absolute;
+    top: 0;
+    right: 3px;
+  }
 }
 
 .shader {
@@ -17,4 +34,17 @@
 
 .hidden {
   display: none;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+.form {
+  display: flex;
+  flex-flow: column;
+  input {
+    height: 30px;
+    margin: 10px 0;
+  }
 }

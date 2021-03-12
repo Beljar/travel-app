@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './sidebar.scss';
 import Trigger from '../trigger/trigger.jsx';
+import MapLeaflet from '../map/MapLeaflet.jsx';
 
 export default function Sidebar() {
   const [classes, setClasses] = useState(['sidebar']);
@@ -16,6 +17,7 @@ export default function Sidebar() {
   return (
     <aside className={classes.join(' ')}>
       <Trigger onClick={toggle} />
+      <MapLeaflet latLong={[38.58, -121.49]}/>
     </aside>
   );
 }

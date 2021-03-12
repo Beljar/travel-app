@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react'
+import { useHistory } from 'react-router-dom'
 import 'antd/dist/antd.css'
 import { Layout, Input, Select } from 'antd'
 import ghImg from '../assets/GitHub-Mark.png'
@@ -12,11 +13,11 @@ const { Search } = Input;
 
 const MainPage = () => {
 
+    const history = useHistory()
     const onSearch = value => console.log(value);
     function handleChange(value) {
         setSelected(value)
     }
-
 
     let [selected, setSelected] = useState('ru');
     let [countries, setCountries] = useState(null);
@@ -38,7 +39,7 @@ const MainPage = () => {
 
         let result = countries.map((elem, index) => {
             return (
-                <div className="countryCard" key={index}>
+                <div className="countryCard" key={index} onClick={() => history.push('/country')}>
                     <img className="countryImage" src={`src/js/assets/mainPage/country/${elem.imageUrl}`} width="300px" height="200px" />
                     <div className="cardHover">
                         <div className="text">{elem.name}</div>
@@ -59,9 +60,9 @@ const MainPage = () => {
         <Layout>
             <Header className="header">
                 <Search className="search-input" placeholder="Страна или столица" allowClear onSearch={onSearch} enterButton />
-                    <a href="#" className="mainLogoLink" target="_blank" rel="noreferrer" style={{ margin: 0 }}>
-                        <img className="mainLogoImage" src={mainLogo} alt="mainLogo" height="50px" width="50px" />
-                    </a>
+                <div className="mainLogo" onClick={() => history.push('/')}>
+                    <img className="mainLogoImage" src={mainLogo} alt="mainLogo" height="50px" width="50px" />
+                </div>
                 <Select defaultValue={selected} style={{ width: 120, margin: '1%' }} onChange={handleChange}>
                     <Option value="ru">Русский</Option>
                     <Option value="en">Английский</Option>

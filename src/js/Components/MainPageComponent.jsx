@@ -72,7 +72,6 @@ const MainPage = () => {
                 <div className="countryCards">
                     {countryCards}
                 </div>
-                {/* <CountryPageComponent countryId={"6046207c9310a86fa8ef83c2"} lang={selected} />  */}
             </Content>
             <Footer className="footer">
                 <a href="https://github.com/SuzyGRBT" target="_blank" rel="noreferrer" className="footer-item">

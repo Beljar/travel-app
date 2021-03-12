@@ -5,6 +5,7 @@ import ghImg from '../assets/GitHub-Mark.png'
 import logo from '../assets/rs_school_js.svg';
 import mainLogo from '../assets/travel.svg';
 import countryList from '../assets/countryList.jsx'
+import CountryPageComponent from './CountryPageComponent.jsx'
 
 const { Header, Content, Footer } = Layout; 
 const { Search } = Input;
@@ -48,6 +49,10 @@ const MainPage = () => {
         })
 
         setCountryCards(result);
+    }, [countries])
+
+    useEffect(() => {
+        console.log(countries)
     }, [countries])
 
     return (

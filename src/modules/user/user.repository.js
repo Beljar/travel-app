@@ -8,4 +8,9 @@ const getOne = async (email) => {
   return await User.findOne({ email: email });
 };
 
-module.exports = { getAll, getOne };
+const getByProps = async (email, password) => {
+  return await User.findOne({ email: email, password: password });
+};
+
+module.exports = { getAll, getOne, getByProps };
+

@@ -32,6 +32,10 @@ const userRouter = require('./modules/user/user.router');
 
 app.use('/users', userRouter);
 
+const loginRouter = require('./modules/login/login.router');
+
+app.use('/login', loginRouter);
+
 app.use((req, res) => {
   res.status(StatusCodes.NOT_IMPLEMENTED).send(ReasonPhrases.NOT_IMPLEMENTED);
 });

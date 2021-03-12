@@ -1,14 +1,11 @@
 import React from 'react';
 import ReactDom from 'react-dom';
-import MainPageComponent from './Components/MainPageComponent.jsx';
+import 'antd/dist/antd.css';
+import '../sass/style.scss'
+import MainPage from './Components/MainPageComponent.jsx'
 
 function App() {
-  return (
-    <>
-      <div>Travel app is running</div>
-      <MainPageComponent />
-    </>
-  ) 
+  return <MainPage />
 }
 
 ReactDom.render(<App />, document.querySelector('#main'));

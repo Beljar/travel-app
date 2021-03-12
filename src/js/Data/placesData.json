@@ -1,0 +1,24 @@
+[
+  {
+    "countryId": "1",
+    "imageUrl": "most-zolotye-vorota.jpg",
+    "rating":"5",
+    "localizations": [
+      {
+        "lang":"ru",
+        "name":"Мост золотые ворота",
+        "description":"Один из самых узнаваемых мостов мира. Пересекает одноимённый пролив. С момента постройки в 1937 году и на протяжении почти 30 лет был самым большим висячим мостом. Его протяжённость — 2737 метров, а высота проезжей части над водой — 67 метров. Доступен для авто, велосипедистов и пешеходов. Всего имеет 6 полос движения и ширину в 27,4 метра. За пересечение моста в южном направлении владельцам авто придётся заплатить 6 долларов."
+      },
+      {
+        "lang":"en",
+        "name":"Golden Gate Bridge",
+        "description":"One of the most recognizable bridges in the world. Crosses the Strait of the same name. Since its construction in 1937 and for almost 30 years was the largest suspension bridge. Its length is 2,737 meters and the height of the roadway above the water is 67 meters. It is accessible to cars, cyclists and pedestrians. It has a total of 6 lanes and a width of 27.4 meters. To cross the bridge in the south direction car owners will have to pay 6 dollars."
+      },
+      {
+        "lang":"bel",
+        "name":"Мост Залатыя Вароты",
+        "description":"Адзін з самых пазнаёмых мастоў свету. Перасекае аднаіменны праліў. З моманту пабудовы ў 1937 годзе і пасля працягвання амаль 30 гадоў быў адным з вялікіх вісячых мастоў. Яго працягласць - 2737 метраў, а вышыня праезжай часткі над вадой - 67 метраў. Даступны для аўто, веласіпедыстаў і пешэходаў. Усё мае 6 палос руху і шырыню ў 27,4 метра. За перасечэнне мосты ў южным напрамку ўладальнікам аўто прыплаціць 6 долараў."
+      }
+    ]
+  }
+]

@@ -4,7 +4,6 @@ import map from './map.scss';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 
 export default function MapLeaflet({latLong}) {
-  console.log(latLong)
   return (
     <MapContainer center={latLong} zoom={8} scrollWheelZoom={true}>
       <TileLayer

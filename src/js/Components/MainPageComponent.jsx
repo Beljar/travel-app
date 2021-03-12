@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import 'antd/dist/antd.css'
 import { Layout, Input, Select } from 'antd'
 import ghImg from '../assets/GitHub-Mark.png'
@@ -13,20 +13,42 @@ const MainPage = () => {
 
     const onSearch = value => console.log(value);
     function handleChange(value) {
-        console.log(`selected ${value}`);
+        setSelected(value)
     }
 
-    const countryCards = countryList.map((image, index) => {
-        return (
-            <div className="countryCard" key={index} onClick={() => console.log('clicked')}>
-                <img className="countryImage" src={"src/js/assets/mainPageCountry/" + image.url} width="300px" height="200px" />
-                <div className="cardHover">
-                    <div className="text">{image.country}</div>
-                    <div className="text">{image.capital}</div>
-                </div>
-            </div>
-        )
-    })
+
+    let [selected, setSelected] = useState('ru');
+    let [countries, setCountries] = useState(null);
+    let [countryCards, setCountryCards] = useState(null);
+    
+    useEffect(() => {
+        let url= `https://travel-app-be.herokuapp.com/countries?lang=${selected}`;
+
+        fetch(url)
+        .then(res => res.json())
+        .then(json => {
+            
+            setCountries(json)
+        })
+    }, [selected])
+
+    useEffect(() => {
+        if(countries === null) return;
+
+        let result = countries.map((elem, index) => {
+            return (
+                <div className="countryCard" key={index}>
+                    <img className="countryImage" src={`src/js/assets/mainPage/country/${elem.imageUrl}`} width="300px" height="200px" />
+                    <div className="cardHover">
+                        <div className="text">{elem.name}</div>
+                        <div className="text">{elem.capital}</div>
+                    </div>
+                </div> 
+            )
+        })
+
+        setCountryCards(result);
+    }, [countries])
 
     return (
         <Layout>
@@ -35,10 +57,10 @@ const MainPage = () => {
                     <a href="#" className="mainLogoLink" target="_blank" rel="noreferrer" style={{ margin: 0 }}>
                         <img className="mainLogoImage" src={mainLogo} alt="mainLogo" height="50px" width="50px" />
                     </a>
-                <Select defaultValue="rus" style={{ width: 120, margin: '1%' }} onChange={handleChange}>
-                    <Option value="rus">Русский</Option>
-                    <Option value="eng">Английский</Option>
-                    <Option value="blr">Белорусский</Option>
+                <Select defaultValue={selected} style={{ width: 120, margin: '1%' }} onChange={handleChange}>
+                    <Option value="ru">Русский</Option>
+                    <Option value="en">Английский</Option>
+                    <Option value="bel">Белорусский</Option>
                 </Select>
             </Header>
             <Content className="site-layout">

@@ -1,8 +1,8 @@
 import React, { Component, Fragment } from 'react';
 import ReactDom from 'react-dom';
-import LoginMenu from './Components/LoginMenu.jsx';
-import LoginWindow from './Components/LoginWindow.jsx';
-import ModalContainer from './Components/ModalContainer.jsx';
+import LoginMenu from './Components/LoginControls/LoginMenu.jsx';
+import LoginWindow from './Components/LoginControls/LoginWindow.jsx';
+import ModalContainer from './Components/ModalWindows/ModalContainer.jsx';
 import '../sass/style.scss';
 
 class App extends Component {

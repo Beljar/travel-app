@@ -16,6 +16,7 @@
     "fast-async": "^6.3.8",
     "node-sass": "^5.0.0",
     "react": "^17.0.1",
+    "react-currency-conv": "^1.1.0",
     "react-dom": "^17.0.1",
     "react-image-gallery": "^1.0.9",
     "react-player": "^2.9.0",

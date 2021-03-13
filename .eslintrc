@@ -8,6 +8,9 @@
   "rules": {
     "react/prop-types": "off",
     "object-curly-newline": "off",
-    "comma-dangle": "off"
+    "comma-dangle": "off",
+    "no-confusing-arrow": "off",
+    "implicit-arrow-linebreak": "off",
+    "function-paren-newline": "off"
   }
 }

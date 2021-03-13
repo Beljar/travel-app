@@ -14,7 +14,7 @@ export default class CountryPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      id: '',
+      id: this.props.id,
       name: '',
       description: '',
       capital: '',
@@ -24,6 +24,7 @@ export default class CountryPage extends Component {
       currency: '',
       ISOCode: '',
       places: [],
+      currentLang: this.props.lang,
     };
   }
 
@@ -63,7 +64,17 @@ export default class CountryPage extends Component {
             </Container>
           </Content>
           <Layout>
-            <Sidebar />
+            <Sidebar
+              countryData={{
+                capitalLocation: {
+                  coordinates: [38.58, -121.49],
+                },
+                capital: 'Sacramento',
+                currentLang: 'en',
+                timezone: 'America/Los_Angeles',
+                currency: 'USD',
+              }}
+            />
           </Layout>
         </Layout>
         <Footer style={{ zIndex: 9999, backgroundColor: '#e43d1a' }}>Footer</Footer>

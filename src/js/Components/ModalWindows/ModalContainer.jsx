@@ -1,24 +1,17 @@
-import React, { Component } from 'react';
+import React, { Component, useContext } from 'react';
 import ModalWindow from './ModalWindow.jsx';
 
-class ModalContainer extends Component {
-  constructor(props) {
-    super(props);
-  }
 
-  close(name) {
-    console.log(`close ${name}`);
-  }
+function ModalContainer(props) {
 
-  render() {
+  console.log(props)
+
     return <div className='modal-container'>
-      {Object.entries(this.props.content).map((entry, idx) => {
+      {Object.entries(props.content).map((entry, idx) => {
         const [name, modal] = entry;
-        console.log(modal);
-        return <ModalWindow key={idx} component={modal[0]} {...modal[1]} close={() => this.props.modalControl(name, { show: 0 })} />
-      })}
-    </div>
-  }
+        return <ModalWindow key={idx} component={modal[0]} {...modal[1]} close={() => props.update(name, { show: 0 })}/>}
+      )}
+    </div> 
 }
 
 export default ModalContainer;

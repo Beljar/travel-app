@@ -1,0 +1,15 @@
+.exchange-rates-widget {
+  text-align: center;
+  font-weight: 500;
+  &-item {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  &-value {
+    color: #389e0d;
+  }
+  &-name {
+    color: #cf1322;
+  }
+}

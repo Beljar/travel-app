@@ -1,17 +1,20 @@
 import React, { Component } from "react";
 import LoginWindow from '../LoginControls/LoginWindow.jsx';
+import SignUp from '../LoginControls/SignUpWindow.jsx';
 
 const { Provider, Consumer } = React.createContext();
 
 class ModalContextProvider extends Component {
   constructor(props) {
     super(props);
-    this.state = { LoginWindow: [LoginWindow, { show: 0 }] }
+    this.state = { LoginWindow: [LoginWindow, { show: 0 }], SignUpWindow: [SignUp, { show: 0 }] }
   }
 
   modalControl(name, props) {
     console.log('modal control');
+    console.log(name, props);
     this.setState((state) => {
+      console.log(state);
       const oldProps = state[name][1];
       const newProps = Object.assign(oldProps, props);
       state[name][1] = newProps;

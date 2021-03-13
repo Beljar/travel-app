@@ -32,7 +32,7 @@ class AuthentificationProvider extends Component {
   }
 
   render() {
-    return <Provider value={{login: this.state.login, onLogin: this.login.bind(this), onLogout: this.logout.bind(this)}}>{this.props.children}</Provider>
+    return <Provider value={{login: this.state.login, onLogin: this.login.bind(this), onLogout: this.logout.bind(this), onSignUp: () => {}}}>{this.props.children}</Provider>
   }
 }
 

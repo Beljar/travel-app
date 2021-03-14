@@ -6,6 +6,10 @@ body {
   padding: 0;
 }
 
+.no-scroll {
+    overflow: hidden;
+}
+
 .header-section {
     width: calc(50% - 57px);
     display: flex;

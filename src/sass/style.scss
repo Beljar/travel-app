@@ -7,10 +7,9 @@ body {
 }
 
 .no-scroll {
-    height: 100hv;
-    padding-right: 17px;
+    height: 100vh;
+    width: calc(100vw - 17px);
     overflow: hidden;
-    padding-right: 15px;
 }
 
 .header-section {

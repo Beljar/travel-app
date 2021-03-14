@@ -6,6 +6,16 @@ body {
   padding: 0;
 }
 
+.header-section {
+    width: calc(50% - 57px);
+    display: flex;
+    align-items: center;
+
+    &--right {
+        justify-content: flex-end;
+    }
+}
+
 .header.ant-layout-header {
     background: #9395D3;
     display: flex;

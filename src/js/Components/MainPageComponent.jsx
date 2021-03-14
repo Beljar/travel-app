@@ -61,16 +61,20 @@ const MainPage = () => {
     return (
         <Layout>
             <Header className="header">
+                <div className="header-section">
                 <Search className="search-input" placeholder="Страна или столица" allowClear onSearch={onSearch} enterButton />
+                </div>
                 <div className="mainLogo" onClick={() => history.push('/')}>
                     <img className="mainLogoImage" src={mainLogo} alt="mainLogo" height="50px" width="50px" />
                 </div>
+                <div className="header-section header-section--right">
                 <Select defaultValue={selected} style={{ width: 120, margin: '1%' }} onChange={handleChange}>
                     <Option value="ru">Русский</Option>
                     <Option value="en">Английский</Option>
                     <Option value="bel">Белорусский</Option>
                 </Select>
                 <LoginMenu></LoginMenu>
+                </div>
             </Header>
             <Content className="site-layout">
                 <div className="countryCards">

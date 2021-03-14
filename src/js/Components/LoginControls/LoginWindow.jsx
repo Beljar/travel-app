@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { AuthentificationConsumer } from '../Authentification/AuthentificationContext.jsx';
 import { ModalContextProvider, ModalContextConsumer } from '../ModalWindows/ModalWindowsContext.jsx';
+import { Button, Input } from 'antd';
+import { MailOutlined, LockOutlined } from '@ant-design/icons';
 
 class LoginWindow extends Component {
   constructor(props) {
@@ -17,17 +19,17 @@ class LoginWindow extends Component {
   }
 
   render() {
-    return <div className=''>
+    return <div className='modal-content'>
       <form className='form'>
-        <input type="text" id="email" name="email" placeholder="Your e-mail" onChange={this.setLogin.bind(this)}></input>
-        <input type="text" id="password" name="password" placeholder="Password"></input>
+        <Input className='input' size="large" type="text" prefix={<MailOutlined />} id="email" name="email" placeholder="Your e-mail" onChange={this.setLogin.bind(this)}></Input>
+        <Input className='input' size="large" type="text" prefix={<LockOutlined />} id="password" name="password" placeholder="Password"></Input>
       </form>
       <AuthentificationConsumer>{(authContext) =>
         <ModalContextConsumer>{(context) =>
-          <div className='btn' onClick={() => {
+          <Button type='primary' className='btn' onClick={() => {
             authContext.onLogin(this.state.login, this.state.password);
             context.update('LoginWindow', { show: 0 });
-            }}>Login</div>}
+            }}>Login</Button>}
         </ModalContextConsumer>}
       </AuthentificationConsumer>
     </div>

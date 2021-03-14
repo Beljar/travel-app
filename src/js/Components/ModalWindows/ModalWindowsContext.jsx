@@ -11,6 +11,11 @@ class ModalContextProvider extends Component {
   }
 
   modalControl(name, props) {
+    if (props.show) {
+      document.body.classList.add('no-scroll');
+    } else {
+      document.body.classList.remove('no-scroll');
+    }
     this.setState((state) => {
       const oldProps = state[name][1];
       const newProps = Object.assign(oldProps, props);

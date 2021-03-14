@@ -1,3 +1,20 @@
+@use './_modules/modal.scss';
+@use './_modules/login-menu.scss';
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.header-section {
+    width: calc(50% - 57px);
+    display: flex;
+    align-items: center;
+
+    &--right {
+        justify-content: flex-end;
+    }
+}
 
 .header.ant-layout-header {
     background: #9395D3;

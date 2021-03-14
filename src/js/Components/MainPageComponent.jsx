@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import 'antd/dist/antd.css'
 import { Layout, Input, Select } from 'antd'
-import ghImg from '../assets/GitHub-Mark.png'
+import ghImg from '../assets/github-logo.png'
 import logo from '../assets/rs_school_js.svg';
 import mainLogo from '../assets/travel.svg';
 import LoginMenu from './LoginControls/LoginMenu.jsx';
@@ -83,22 +83,22 @@ const MainPage = () => {
             </Content>
             <Footer className="footer">
                 <a href="https://github.com/SuzyGRBT" target="_blank" rel="noreferrer" className="footer-item">
-                    <img src={ghImg} alt="Suzanna" height="30px" width="30px" style={{ marginRight: 5 }} />
+                    <img src={ghImg} alt="Suzanna" height="20px" width="20px" style={{ marginRight: 5 }} />
                     <span>SuzyGRBT</span>
                 </a>
                 <a href="https://github.com/Beljar" target="_blank" rel="noreferrer" className="footer-item">
-                    <img src={ghImg} alt="Ilia" height="30px" width="30px" style={{ marginRight: 5 }} />
+                    <img src={ghImg} alt="Ilia" height="20px" width="20px" style={{ marginRight: 5 }} />
                     <span>Beljar</span>
                 </a>
                 <a href="https://github.com/conservativ007" target="_blank" rel="noreferrer" className="footer-item">
-                    <img src={ghImg} alt="Maksim" height="30px" width="30px" style={{ marginRight: 5 }} />
+                    <img src={ghImg} alt="Maksim" height="20px" width="20px" style={{ marginRight: 5 }} />
                     <span>conservativ007</span>
                 </a>
                 <a href="https://github.com/odil-abdulloyev" target="_blank" rel="noreferrer" className="footer-item">
-                    <img src={ghImg} alt="Odil" height="30px" width="30px" style={{ marginRight: 5 }} />
+                    <img src={ghImg} alt="Odil" height="20px" width="20px" style={{ marginRight: 5 }} />
                     <span>odil-abdulloyev</span>
                 </a>
-                <p className="footer-item">2020</p>
+                <p className="footer-item">2021</p>
                 <a href="https://rs.school/js/" target="_blank" rel="noreferrer" className="footer-item">
                     <img src={logo} alt="rs-school" height="30px" width="60px" />
                 </a>

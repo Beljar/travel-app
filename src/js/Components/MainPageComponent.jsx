@@ -6,25 +6,28 @@ import ghImg from '../assets/github-logo.png'
 import logo from '../assets/rs_school_js.svg';
 import mainLogo from '../assets/travel.svg';
 import LoginMenu from './LoginControls/LoginMenu.jsx';
-import countryList from '../assets/countryList.jsx'
-import CountryPageComponent from './CountryPageComponent.jsx';
-
 
 const { Header, Content, Footer } = Layout;
 const { Search } = Input;
 
 const MainPage = () => {
 
-    const history = useHistory()
-    const onSearch = value => console.log(value);
-    function handleChange(value) {
-        setSelected(value)
-    }
-
+    const [searchTerm, setSearchTerm] = useState('');
     let [selected, setSelected] = useState('ru');
     let [countries, setCountries] = useState(null);
     let [countryCards, setCountryCards] = useState(null);
 
+    const history = useHistory();
+    
+    // doesn't work now - cannot read property "value" of undefined
+    const onSearch = (e) => {
+        setSearchTerm(e.target.value);
+    };
+        
+    function handleChange(value) {
+        setSelected(value)
+    }
+                
     useEffect(() => {
         let url = `https://travel-app-be.herokuapp.com/countries?lang=${selected}`;
 
@@ -39,7 +42,12 @@ const MainPage = () => {
     useEffect(() => {
         if (countries === null) return;
 
-        let result = countries.map((elem, index) => {
+        let searchResult = countries.filter(function (el) {
+            return el.name.toLowerCase().includes(searchTerm) && 
+                    el.capital.toLowerCase().includes(searchTerm);
+        })
+
+        let result = searchResult.map((elem, index) => {
             return (
                 <div className="countryCard" key={index} onClick={() => history.push(`/country/${elem.id}?lang=${selected}`)}>
                     <img className="countryImage" src={`src/js/assets/mainPage/country/${elem.imageUrl}`} width="300px" height="200px" />
@@ -62,7 +70,15 @@ const MainPage = () => {
         <Layout>
             <Header className="header">
                 <div className="header-section">
-                <Search className="search-input" placeholder="Страна или столица" allowClear onSearch={onSearch} enterButton />
+                <Search 
+                    className="search-input" 
+                    type="text"
+                    placeholder="Страна или столица" 
+                    value={searchTerm} 
+                    onSearch={onSearch} 
+                    allowClear 
+                    enterButton 
+                />
                 </div>
                 <div className="mainLogo" onClick={() => history.push('/')}>
                     <img className="mainLogoImage" src={mainLogo} alt="mainLogo" height="50px" width="50px" />

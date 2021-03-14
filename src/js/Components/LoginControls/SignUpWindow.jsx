@@ -14,7 +14,6 @@ class LoginWindow extends Component {
   }
 
   setLogin(e) {
-    console.log(e.target.value);
     this.setState({login: e.target.value})
   }
 

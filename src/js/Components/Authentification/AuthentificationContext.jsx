@@ -11,19 +11,14 @@ class AuthentificationProvider extends Component {
     if (loginCookie) {
       login = loginCookie.split('=')[1];
     }
-    console.log('auth');
-    console.log(login);
     this.state = {
       login
     }
-    console.log(this.state);
   }
 
   login(login, password) {
-    console.log(login);
     document.cookie = `user = ${login}; `;
     this.setState({login});
-    console.log(this.state);
   }
 
   logout() {

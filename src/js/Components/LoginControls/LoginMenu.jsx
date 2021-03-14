@@ -9,10 +9,8 @@ class LoginMenu extends Component {
 
 
   render() {
-    console.log(this.props);
     return <div className='login-menu'>
       <AuthentificationConsumer>{(authContext) => {
-        console.log(`login:${authContext.login}`)
         if (authContext.login) {
           return <Fragment><div>Hello <b>{authContext.login}</b>!</div>
             <div className='link' onClick={() => authContext.onLogout()}>Log Out</div></Fragment>

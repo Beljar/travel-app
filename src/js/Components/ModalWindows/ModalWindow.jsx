@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import {ModalsContext} from './ModalWindowsContext.jsx';
 
 function ModalWindow (props) {
-  console.log('modal window');
-  console.log(props);
     const ModalComponent = props.component;
     return <div className={(props.show) ? 'shader' : 'hidden'}>
       <div className='modal'>

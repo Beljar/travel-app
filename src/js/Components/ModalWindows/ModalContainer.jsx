@@ -4,8 +4,6 @@ import ModalWindow from './ModalWindow.jsx';
 
 function ModalContainer(props) {
 
-  console.log(props)
-
     return <div className='modal-container'>
       {Object.entries(props.content).map((entry, idx) => {
         const [name, modal] = entry;

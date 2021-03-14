@@ -11,10 +11,7 @@ class ModalContextProvider extends Component {
   }
 
   modalControl(name, props) {
-    console.log('modal control');
-    console.log(name, props);
     this.setState((state) => {
-      console.log(state);
       const oldProps = state[name][1];
       const newProps = Object.assign(oldProps, props);
       state[name][1] = newProps;

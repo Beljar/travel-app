@@ -41,7 +41,7 @@ const MainPage = () => {
 
         let result = countries.map((elem, index) => {
             return (
-                <div className="countryCard" key={index} onClick={() => history.push('/country')}>
+                <div className="countryCard" key={index} onClick={() => history.push(`/country/${elem.id}?lang=${selected}`)}>
                     <img className="countryImage" src={`src/js/assets/mainPage/country/${elem.imageUrl}`} width="300px" height="200px" />
                     <div className="cardHover">
                         <div className="text">{elem.name}</div>

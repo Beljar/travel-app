@@ -1,4 +1,4 @@
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { BrowserRouter, Switch, Route, HashRouter } from 'react-router-dom';
 import ScrollToTop from './utils/ScrollToTop';
 import React, { Component, Fragment } from 'react';
 import ReactDom from 'react-dom';
@@ -20,16 +20,15 @@ function App() {
         <ModalContextConsumer>
           {(context) => <ModalContainer {...context} />}
         </ModalContextConsumer>
-        <BrowserRouter>
+        <HashRouter>
           <ScrollToTop />
           <Switch>
             <Route component={MainPage} path='/' exact />
-            <Route
-              render={() => <CountryPage countryId='6046207c9310a86fa8ef83c2' lang='en' />}
-              path='/country'
-            />
+            <Route path='/country/:id'>
+              <CountryPage />
+            </Route>
           </Switch>
-        </BrowserRouter>
+        </HashRouter>
       </ModalContextProvider>
     </AuthentificationProvider>
   );

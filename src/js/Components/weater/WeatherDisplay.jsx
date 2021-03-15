@@ -22,7 +22,7 @@ export default function WeatherDisplay({city, lang}) {
 
   useEffect(() => {
     let copyCity;
-    let url;
+    let url = `http://api.openweathermap.org/data/2.5/weather?q=Сакраменто&units=metric&appid=afeeb4a567b04e8d0d647746c206cec1&lang=${lang}`;
 
     if(lang === 'bel'){
       copyCity = dataCountry[city.slice(0, 1).toLowerCase() + city.slice(1)]
@@ -35,14 +35,15 @@ export default function WeatherDisplay({city, lang}) {
     fetch(url)
     .then(res => res.json())
     .then(json => {
-
-      const copy  = Object.assign({}, weater);
-      copy['temp'] = Math.trunc(json.main.temp);
-      copy['description'] = json.weather[0].description;
-      setWeater(copy)
-
-      let icon = json.weather[0].icon;
-      setIconUrl(`http://openweathermap.org/img/w/${icon}.png`);
+      try{
+        const copy  = Object.assign({}, weater);
+        copy['temp'] = Math.trunc(json.main.temp);
+        copy['description'] = json.weather[0].description;
+        setWeater(copy)
+  
+        let icon = json.weather[0].icon;
+        setIconUrl(`http://openweathermap.org/img/w/${icon}.png`);
+      }catch(err){}
     });
   }, [city])
 

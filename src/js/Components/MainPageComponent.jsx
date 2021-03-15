@@ -54,10 +54,6 @@ const MainPage = () => {
         setCountryCards(result);
     }, [countries])
 
-    useEffect(() => {
-        console.log(countries)
-    }, [countries])
-
     return (
         <Layout>
             <Header className="header">

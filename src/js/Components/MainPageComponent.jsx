@@ -20,13 +20,22 @@ const MainPage = () => {
     const history = useHistory();
 
     const onSearch = (event) => {
+        if (event.type === 'change') {
+            event = event.target.value;
+        }
         setSearchTerm(event);
     };
-        
+
     function handleChange(value) {
         setSelected(value)
     }
-                
+
+    useEffect(() => {
+        if (countries) {
+            setCountryCards(countries);
+        };
+    }, [countries]);
+
     useEffect(() => {
         let url = `https://travel-app-be.herokuapp.com/countries?lang=${selected}`;
 
@@ -40,41 +49,42 @@ const MainPage = () => {
 
 
     useEffect(() => {
-        
+
         if (countries === null) return;
 
-        const searchResult = countries.filter(country => 
-            country.name.toLowerCase().includes(searchTerm)
-            );
-        
+        const searchResult = countries.filter(country =>
+            country.name.toLowerCase().includes(searchTerm.toLowerCase())
+        );
+
         setCountryCards(searchResult);
 
     }, [searchTerm])
-     
+
     return (
         <Layout>
             <Header className="header">
                 <div className="header-section">
-                <Search 
-                    className="search-input" 
-                    type="text"
-                    placeholder="Страна или столица" 
-                    defaultValue={searchTerm} 
-                    onSearch={onSearch} 
-                    allowClear 
-                    enterButton 
-                />
+                    <Search
+                        className="search-input"
+                        type="text"
+                        placeholder="Страна или столица"
+                        defaultValue={searchTerm}
+                        onSearch={onSearch}
+                        onChange={onSearch}
+                        allowClear
+                        enterButton
+                    />
                 </div>
                 <div className="mainLogo" onClick={() => history.push('/')}>
                     <img className="mainLogoImage" src={mainLogo} alt="mainLogo" height="50px" width="50px" />
                 </div>
                 <div className="header-section header-section--right">
-                <Select defaultValue={selected} style={{ width: 120, margin: '1%' }} onChange={handleChange}>
-                    <Option value="ru">Русский</Option>
-                    <Option value="en">Английский</Option>
-                    <Option value="bel">Белорусский</Option>
-                </Select>
-                <LoginMenu></LoginMenu>
+                    <Select defaultValue={selected} style={{ width: 120, margin: '1%' }} onChange={handleChange}>
+                        <Option value="ru">Русский</Option>
+                        <Option value="en">Английский</Option>
+                        <Option value="bel">Белорусский</Option>
+                    </Select>
+                    <LoginMenu></LoginMenu>
                 </div>
             </Header>
             <Content className="site-layout">

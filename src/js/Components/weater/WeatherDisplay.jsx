@@ -20,6 +20,12 @@ export default function WeatherDisplay({city, lang}) {
     'канада': 'канада',
   }
 
+  const startText = {
+    'ru': 'погода в',
+    'en': 'weather in',
+    'bel': 'надвор\'е ў',
+  }
+
   useEffect(() => {
     let copyCity;
     let url = `http://api.openweathermap.org/data/2.5/weather?q=Сакраменто&units=metric&appid=afeeb4a567b04e8d0d647746c206cec1&lang=${lang}`;
@@ -49,7 +55,7 @@ export default function WeatherDisplay({city, lang}) {
 
   return(
       <div className='weater'>
-        <div className='weater-city'>Погода в {city}</div>
+        <div className='weater-city'>{startText[lang]} {city}</div>
           <div><img src={iconUrl} alt={weater.description}/></div>
           <div>{weater.temp}&#176;, {weater.description}</div>
       </div>

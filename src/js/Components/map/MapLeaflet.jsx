@@ -6,7 +6,7 @@ import './marker-shadow.png';
 
 export default function MapLeaflet({latLong, city}) {
   return ( latLong ? 
-      <MapContainer center={latLong} zoom={8} scrollWheelZoom={true} zoomControl={false}>
+      <MapContainer center={latLong} zoom={8} scrollWheelZoom={true} >
         <TileLayer
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

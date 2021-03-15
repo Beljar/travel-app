@@ -12,16 +12,15 @@ const { Search } = Input;
 
 const MainPage = () => {
 
-    const [searchTerm, setSearchTerm] = useState('');
+    let [searchTerm, setSearchTerm] = useState("");
     let [selected, setSelected] = useState('ru');
     let [countries, setCountries] = useState(null);
-    let [countryCards, setCountryCards] = useState(null);
+    let [countryCards, setCountryCards] = useState([]);
 
     const history = useHistory();
-    
-    // doesn't work now - cannot read property "value" of undefined
-    const onSearch = (e) => {
-        setSearchTerm(e.target.value);
+
+    const onSearch = (event) => {
+        setSearchTerm(event);
     };
         
     function handleChange(value) {
@@ -39,33 +38,19 @@ const MainPage = () => {
             })
     }, [selected])
 
+
     useEffect(() => {
+        
         if (countries === null) return;
 
-        let searchResult = countries.filter(function (el) {
-            return el.name.toLowerCase().includes(searchTerm) && 
-                    el.capital.toLowerCase().includes(searchTerm);
-        })
+        const searchResult = countries.filter(country => 
+            country.name.toLowerCase().includes(searchTerm)
+            );
+        
+        setCountryCards(searchResult);
 
-        let result = searchResult.map((elem, index) => {
-            return (
-                <div className="countryCard" key={index} onClick={() => history.push(`/country/${elem.id}?lang=${selected}`)}>
-                    <img className="countryImage" src={`src/js/assets/mainPage/country/${elem.imageUrl}`} width="300px" height="200px" />
-                    <div className="cardHover">
-                        <div className="text">{elem.name}</div>
-                        <div className="text">{elem.capital}</div>
-                    </div>
-                </div>
-            )
-        })
-
-        setCountryCards(result);
-    }, [countries])
-
-    useEffect(() => {
-        console.log(countries)
-    }, [countries])
-
+    }, [searchTerm])
+     
     return (
         <Layout>
             <Header className="header">
@@ -74,7 +59,7 @@ const MainPage = () => {
                     className="search-input" 
                     type="text"
                     placeholder="Страна или столица" 
-                    value={searchTerm} 
+                    defaultValue={searchTerm} 
                     onSearch={onSearch} 
                     allowClear 
                     enterButton 
@@ -94,7 +79,17 @@ const MainPage = () => {
             </Header>
             <Content className="site-layout">
                 <div className="countryCards">
-                    {countryCards}
+                    {countryCards.map((elem, index) => {
+                        return (
+                            <div className="countryCard" key={index} onClick={() => history.push(`/country/${elem.id}?lang=${selected}`)}>
+                                <img className="countryImage" src={`src/js/assets/mainPage/country/${elem.imageUrl}`} width="300px" height="200px" />
+                                <div className="cardHover">
+                                    <div className="text">{elem.name}</div>
+                                    <div className="text">{elem.capital}</div>
+                                </div>
+                            </div>
+                        )
+                    })}
                 </div>
             </Content>
             <Footer className="footer">

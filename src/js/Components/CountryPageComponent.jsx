@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { withRouter } from "react-router";
 import { Layout } from 'antd';
 import axios from 'axios';
 import Container from './container/container.jsx';
@@ -10,11 +11,13 @@ import Sidebar from './sidebar/sidebar.jsx';
 
 const { Header, Footer, Content } = Layout;
 
-export default class CountryPage extends Component {
+class CountryPage extends Component {
   constructor(props) {
     super(props);
+    const lang = this.props.location.search.match(/lang=(\w*)/)[1];
     this.state = {
-      id: this.props.id,
+      id: this.props.match.params.id,
+      lang,
       name: '',
       description: '',
       capital: '',
@@ -30,7 +33,7 @@ export default class CountryPage extends Component {
 
   async componentDidMount() {
     const response = await axios.get(
-      `https://travel-app-be.herokuapp.com/countries/${this.props.countryId}?lang=${this.props.lang}`
+      `https://travel-app-be.herokuapp.com/countries/${this.state.id}?lang=${this.state.lang}`
     );
     const { data } = response;
     this.setState({ ...data });
@@ -67,10 +70,10 @@ export default class CountryPage extends Component {
             <Sidebar
               countryData={{
                 capitalLocation: {
-                  coordinates: [38.58, -121.49],
+                  coordinates: this.state.capitalLocation.coordinates,
                 },
-                capital: 'Sacramento',
-                currentLang: 'en',
+                capital: this.state.capital,
+                currentLang: this.state.lang,
                 timezone: 'America/Los_Angeles',
                 currency: 'USD',
               }}
@@ -82,3 +85,5 @@ export default class CountryPage extends Component {
     );
   }
 }
+
+export default withRouter(CountryPage);

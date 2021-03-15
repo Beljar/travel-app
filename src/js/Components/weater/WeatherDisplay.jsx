@@ -9,8 +9,29 @@ export default function WeatherDisplay({city, lang}) {
     description: ''
   });
 
+  const dataCountry = {
+    'сакрамента': 'сакраменто',
+    'мадрыд': 'мадрид',
+    'парыж': 'париж',
+    'лондан': 'лондон',
+    'італія': 'италия',
+    'нарвегія': 'норвегия',
+    'германія': 'германия',
+    'канада': 'канада',
+  }
+
   useEffect(() => {
-    let url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=afeeb4a567b04e8d0d647746c206cec1&lang=${lang}`;
+    let copyCity;
+    let url;
+
+    if(lang === 'bel'){
+      copyCity = dataCountry[city.slice(0, 1).toLowerCase() + city.slice(1)]
+      if(copyCity === undefined) return;
+      url = `http://api.openweathermap.org/data/2.5/weather?q=${copyCity.slice(0, 1).toUpperCase() + copyCity.slice(1)}&units=metric&appid=afeeb4a567b04e8d0d647746c206cec1&lang=ru`;
+    } else {
+      url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=afeeb4a567b04e8d0d647746c206cec1&lang=${lang}`;
+    }
+
     fetch(url)
     .then(res => res.json())
     .then(json => {

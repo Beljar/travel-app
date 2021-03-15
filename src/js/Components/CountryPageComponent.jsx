@@ -19,6 +19,7 @@ class CountryPage extends Component {
       id: this.props.match.params.id,
       lang,
       name: '',
+      nameEn: '',
       description: '',
       capital: '',
       capitalLocation: {},
@@ -56,14 +57,14 @@ class CountryPage extends Component {
               <Gallery
                 style={{ marginTop: 40 }}
                 items={this.state.places.map((place) => ({
-                  original:
-                    'https://images.unsplash.com/photo-1522961364055-ae8ee2526003?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80',
-                  thumbnail:
-                    'https://images.unsplash.com/photo-1522961364055-ae8ee2526003?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80',
+                    original: 
+                    `public/assets/images/${this.state.name}/${place.imageUrl}`,
+                    thumbnail:
+                    `public/assets/images/${this.state.name}/${place.imageUrl}`,
                   originalTitle: place.name,
                   description: place.description,
                 }))}
-              />
+              />              
             </Container>
           </Content>
           <Layout>

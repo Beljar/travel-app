@@ -7,6 +7,9 @@ import logo from '../assets/rs_school_js.svg';
 import mainLogo from '../assets/travel.svg';
 import LoginMenu from './LoginControls/LoginMenu.jsx';
 
+function requireAll(r) { r.keys().forEach(r); }
+requireAll(require.context('../assets/mainPage/country/', true, /\.jpg$/));
+
 const { Header, Content, Footer } = Layout;
 const { Search } = Input;
 
@@ -92,7 +95,7 @@ const MainPage = () => {
                     {countryCards.map((elem, index) => {
                         return (
                             <div className="countryCard" key={index} onClick={() => history.push(`/country/${elem.id}?lang=${selected}`)}>
-                                <img className="countryImage" src={`src/js/assets/mainPage/country/${elem.imageUrl}`} width="300px" height="200px" />
+                                <img className="countryImage" src={`js/assets/mainPage/country/${elem.imageUrl}`} width="300px" height="200px" />
                                 <div className="cardHover">
                                     <div className="text">{elem.name}</div>
                                     <div className="text">{elem.capital}</div>

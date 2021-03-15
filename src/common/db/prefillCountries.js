@@ -5,9 +5,9 @@ const prefill = () => {
   console.log(countriesData);
   countriesData.forEach((country) => {
     const locales = country.localizations.map((locale) => new Locale(locale));
-    console.log(locales);
     country.localizations = locales;
     const countryData = new Country(country);
+    console.log('adding country');
     console.log(country);
     countryData.save();
   });

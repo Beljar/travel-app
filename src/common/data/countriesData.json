@@ -4,10 +4,12 @@
     "imageUrl": "california.jpg",
     "videoUrl": "https://youtu.be/oxB8hFDE6GU",
     "currency": "USD", 
-    "ISOCode": "CA",
+    "ISOCode": "CAL",
+    "timezone": "America/Los_Angeles",
+    "nameEn": "california",
     "capitalLocation": {
       "type": "Point",
-      "coordinates": [36.77, -119.41]
+      "coordinates": [38.58, -121.49]
     },
     "localizations": [
       {
@@ -36,9 +38,11 @@
     "videoUrl": "https://youtu.be/DpUTWLsPJeY",
     "currency": "EUR", 
     "ISOCode": "ESP",
+    "timezone": "Europe/Madrid",
+    "nameEn": "spain",
     "capitalLocation": {
       "type": "Point",
-      "coordinates": [40.24, 3.42]
+      "coordinates": [40.41, -3.70]
     },
     "localizations": [
       {
@@ -65,11 +69,13 @@
     "id": "3",
     "imageUrl": "paris.jpg",
     "videoUrl": "https://youtu.be/72kRM86V-dw",
-    "currency": "EUR",
+    "currency": "EUR", 
     "ISOCode": "FR",
+    "timezone": "Europe/Paris",
+    "nameEn": "paris",
     "capitalLocation": {
       "type": "Point",
-      "coordinates": [46.22, 2.21]
+      "coordinates": [48.85, 2.35]
     },
     "localizations": [
       {
@@ -96,11 +102,13 @@
     "id": "4",
     "imageUrl": "anglia.jpg",
     "videoUrl": "https://youtu.be/X8zLJlU_-60",
-    "currency": "GBP",
+    "currency": "GBP", 
     "ISOCode": "GB",
+    "timezone": "Europe/London",
+    "nameEn": "england",
     "capitalLocation": {
       "type": "Point",
-      "coordinates": [52.35, -1.17]
+      "coordinates": [51.50, -0.12]
     },
     "localizations": [
       {
@@ -129,9 +137,11 @@
     "videoUrl": "https://youtu.be/9Vs5lDfeqM4",
     "currency": "EUR", 
     "ISOCode": "IT",
+    "timezone": "Europe/Rome",
+    "nameEn": "italy",
     "capitalLocation": {
       "type": "Point",
-      "coordinates": [41.87, 12.56]
+      "coordinates": [41.90, 12.49]
     },
     "localizations": [
       {
@@ -158,8 +168,10 @@
     "id": "6",
     "imageUrl": "Norway.jpg",
     "videoUrl": "https://youtu.be/wnKHtpJiRNo",
-    "currency": "NOK",
+    "currency": "NOK", 
     "ISOCode": "NO",
+    "timezone": "Europe/Oslo",
+    "nameEn": "norway",
     "capitalLocation": {
       "type": "Point",
       "coordinates": [59.91, 10.75]
@@ -191,6 +203,8 @@
     "videoUrl": "https://youtu.be/SO9tUbxIIWU",
     "currency": "EUR",
     "ISOCode": "DE",
+    "timezone": "Europe/Berlin",
+    "nameEn": "germany",
     "capitalLocation": {
       "type": "Point",
       "coordinates": [52.52, 13.40]
@@ -220,8 +234,10 @@
     "id": "8",
     "imageUrl": "canada.jpg",
     "videoUrl": "https://youtu.be/7D-ERddm9J4",
-    "currency": "EUR",
-    "ISOCode": "CAD",
+    "currency": "CAD",
+    "ISOCode": "CA",
+    "timezone": "America/Toronto",
+    "nameEn": "canada",
     "capitalLocation": {
       "type": "Point",
       "coordinates": [45.42, -75.69]

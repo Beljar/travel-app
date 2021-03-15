@@ -30,6 +30,8 @@ const countrySchema = new Schema({
     unique: true,
     required: true,
   },
+  nameEn: String,
+  timezone: String,
   capitalLocation: {
     type: {
       type: String,

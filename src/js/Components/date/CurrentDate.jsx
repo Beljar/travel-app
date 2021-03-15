@@ -4,9 +4,7 @@ import 'moment/locale/pt-br';
 import date from './date.scss';
 
 export default function WeatherDisplay({timezone, lang}) {
-  // console.log(timezone)
-  // let date = new Date();
-
+  
   const langs = {
     'ru': 'Местное время',
     'en': 'The local time',
@@ -17,6 +15,7 @@ export default function WeatherDisplay({timezone, lang}) {
   let [monthBel, setMonthBel] = useState(false);
 
   useEffect(() => {
+    if(timezone === undefined) return;
     const interval = setInterval(() => {
       if(lang === 'bel') {
         lang = 'ru';
@@ -27,7 +26,7 @@ export default function WeatherDisplay({timezone, lang}) {
       setDate(date)
     }, 1000);
     return () => clearInterval(interval);
-  }, []);
+  }, [timezone]);
 
   useEffect(() => {
     if(date === null) return;

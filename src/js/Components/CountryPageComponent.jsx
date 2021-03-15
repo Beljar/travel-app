@@ -58,9 +58,9 @@ class CountryPage extends Component {
                 style={{ marginTop: 40 }}
                 items={this.state.places.map((place) => ({
                     original: 
-                    `public/assets/images/${this.state.name}/${place.imageUrl}`,
+                    `public/assets/images/${this.state.nameEn}/${place.imageUrl}`,
                     thumbnail:
-                    `public/assets/images/${this.state.name}/${place.imageUrl}`,
+                    `public/assets/images/${this.state.nameEn}/${place.imageUrl}`,
                   originalTitle: place.name,
                   description: place.description,
                 }))}
@@ -75,7 +75,7 @@ class CountryPage extends Component {
                 },
                 capital: this.state.capital,
                 currentLang: this.state.lang,
-                timezone: 'America/Los_Angeles',
+                timezone: this.state.timezone,
                 currency: 'USD',
               }}
             />

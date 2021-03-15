@@ -6,25 +6,27 @@ import ghImg from '../assets/github-logo.png'
 import logo from '../assets/rs_school_js.svg';
 import mainLogo from '../assets/travel.svg';
 import LoginMenu from './LoginControls/LoginMenu.jsx';
-import countryList from '../assets/countryList.jsx'
-import CountryPageComponent from './CountryPageComponent.jsx';
-
 
 const { Header, Content, Footer } = Layout;
 const { Search } = Input;
 
 const MainPage = () => {
 
-    const history = useHistory()
-    const onSearch = value => console.log(value);
+    let [searchTerm, setSearchTerm] = useState("");
+    let [selected, setSelected] = useState('ru');
+    let [countries, setCountries] = useState(null);
+    let [countryCards, setCountryCards] = useState([]);
+
+    const history = useHistory();
+
+    const onSearch = (event) => {
+        setSearchTerm(event);
+    };
+        
     function handleChange(value) {
         setSelected(value)
     }
-
-    let [selected, setSelected] = useState('ru');
-    let [countries, setCountries] = useState(null);
-    let [countryCards, setCountryCards] = useState(null);
-
+                
     useEffect(() => {
         let url = `https://travel-app-be.herokuapp.com/countries?lang=${selected}`;
 
@@ -36,29 +38,32 @@ const MainPage = () => {
             })
     }, [selected])
 
+
     useEffect(() => {
+        
         if (countries === null) return;
 
-        let result = countries.map((elem, index) => {
-            return (
-                <div className="countryCard" key={index} onClick={() => history.push(`/country/${elem.id}?lang=${selected}`)}>
-                    <img className="countryImage" src={`src/js/assets/mainPage/country/${elem.imageUrl}`} width="300px" height="200px" />
-                    <div className="cardHover">
-                        <div className="text">{elem.name}</div>
-                        <div className="text">{elem.capital}</div>
-                    </div>
-                </div>
-            )
-        })
+        const searchResult = countries.filter(country => 
+            country.name.toLowerCase().includes(searchTerm)
+            );
+        
+        setCountryCards(searchResult);
 
-        setCountryCards(result);
-    }, [countries])
-
+    }, [searchTerm])
+     
     return (
         <Layout>
             <Header className="header">
                 <div className="header-section">
-                <Search className="search-input" placeholder="Страна или столица" allowClear onSearch={onSearch} enterButton />
+                <Search 
+                    className="search-input" 
+                    type="text"
+                    placeholder="Страна или столица" 
+                    defaultValue={searchTerm} 
+                    onSearch={onSearch} 
+                    allowClear 
+                    enterButton 
+                />
                 </div>
                 <div className="mainLogo" onClick={() => history.push('/')}>
                     <img className="mainLogoImage" src={mainLogo} alt="mainLogo" height="50px" width="50px" />
@@ -74,7 +79,17 @@ const MainPage = () => {
             </Header>
             <Content className="site-layout">
                 <div className="countryCards">
-                    {countryCards}
+                    {countryCards.map((elem, index) => {
+                        return (
+                            <div className="countryCard" key={index} onClick={() => history.push(`/country/${elem.id}?lang=${selected}`)}>
+                                <img className="countryImage" src={`src/js/assets/mainPage/country/${elem.imageUrl}`} width="300px" height="200px" />
+                                <div className="cardHover">
+                                    <div className="text">{elem.name}</div>
+                                    <div className="text">{elem.capital}</div>
+                                </div>
+                            </div>
+                        )
+                    })}
                 </div>
             </Content>
             <Footer className="footer">

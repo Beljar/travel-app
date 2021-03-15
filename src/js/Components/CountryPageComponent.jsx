@@ -8,6 +8,9 @@ import capitalize from '../utils/capitalize';
 import VideoPlayer from './video-player/video-player.jsx';
 import Gallery from './gallery/gallery.jsx';
 import Sidebar from './sidebar/sidebar.jsx';
+import mainLogo from '../assets/travel.svg';
+import ghImg from '../assets/github-logo.png'
+import logo from '../assets/rs_school_js.svg';
 
 const { Header, Footer, Content } = Layout;
 
@@ -31,21 +34,25 @@ class CountryPage extends Component {
       currentLang: this.props.lang,
     };
   }
-
+  
   async componentDidMount() {
     const response = await axios.get(
       `https://travel-app-be.herokuapp.com/countries/${this.state.id}?lang=${this.state.lang}`
-    );
-    const { data } = response;
-    this.setState({ ...data });
-  }
-
+      );
+      const { data } = response;
+      this.setState({ ...data });
+    }
+        
   render() {
     return (
       <Layout>
-        <Header style={{ zIndex: 9999 }}>Header</Header>
+        <Header className="header" style={{ zIndex: 9999 }}>
+          <div className="mainLogo" onClick={() => history.push('/')}>
+            <img className="mainLogoImage" src={mainLogo} alt="mainLogo" height="50px" width="50px" />
+          </div>
+        </Header>
         <Layout>
-          <Content>
+          <Content style={{ background: '#FBF9FF' }}>
             <Container>
               <CountryInfo
                 country={capitalize(this.state.name)}
@@ -81,7 +88,28 @@ class CountryPage extends Component {
             />
           </Layout>
         </Layout>
-        <Footer style={{ zIndex: 9999, backgroundColor: '#e43d1a' }}>Footer</Footer>
+        <Footer className="footer" style={{ zIndex: 9999 }}>
+          <a href="https://github.com/SuzyGRBT" target="_blank" rel="noreferrer" className="footer-item">
+              <img src={ghImg} alt="Suzanna" height="20px" width="20px" style={{ marginRight: 5 }} />
+              <span>SuzyGRBT</span>
+          </a>
+          <a href="https://github.com/Beljar" target="_blank" rel="noreferrer" className="footer-item">
+              <img src={ghImg} alt="Ilia" height="20px" width="20px" style={{ marginRight: 5 }} />
+              <span>Beljar</span>
+          </a>
+          <a href="https://github.com/conservativ007" target="_blank" rel="noreferrer" className="footer-item">
+              <img src={ghImg} alt="Maksim" height="20px" width="20px" style={{ marginRight: 5 }} />
+              <span>conservativ007</span>
+          </a>
+          <a href="https://github.com/odil-abdulloyev" target="_blank" rel="noreferrer" className="footer-item">
+              <img src={ghImg} alt="Odil" height="20px" width="20px" style={{ marginRight: 5 }} />
+              <span>odil-abdulloyev</span>
+          </a>
+          <p className="footer-item">2021</p>
+          <a href="https://rs.school/js/" target="_blank" rel="noreferrer" className="footer-item">
+              <img src={logo} alt="rs-school" height="30px" width="60px" />
+          </a>
+        </Footer>
       </Layout>
     );
   }

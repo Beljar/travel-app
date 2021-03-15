@@ -93,7 +93,7 @@ body {
 }
 
 .footer.ant-layout-footer {
-    padding: 25px 50px;
+    padding: 28px 50px;
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -106,4 +106,10 @@ body {
         display: flex;
         align-items: center;
     }
+}
+
+p.footer-item {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 700;
+    margin-bottom: 0;
 }

@@ -20,7 +20,7 @@ export default function Sidebar({ countryData }) {
   return (
     <aside className={classes.join(' ')}>
       <Trigger onClick={toggle} />
-      <MapLeaflet latLong={countryData.capitalLocation.coordinates} />
+      <MapLeaflet latLong={countryData.capitalLocation.coordinates} city={countryData.capital} />
       <Weater lang={countryData.currentLang} city={countryData.capital} />
       <CurrentDate timezone={countryData.timezone} lang={countryData.currentLang} />
       <ExchangeRatesWidget from={countryData.currency} value={1} />

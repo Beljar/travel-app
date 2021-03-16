@@ -23,7 +23,7 @@ const MainPage = () => {
     const history = useHistory();
 
     const onSearch = (event) => {
-        if (event.type === 'change') {
+        if (typeof(event) === 'object') {
             event = event.target.value;
         }
         setSearchTerm(event);
@@ -54,9 +54,9 @@ const MainPage = () => {
     useEffect(() => {
 
         if (countries === null) return;
-
         const searchResult = countries.filter(country =>
-            country.name.toLowerCase().includes(searchTerm.toLowerCase())
+            country.name.toLowerCase().includes(searchTerm.toLowerCase()) || 
+            country.capital.toLowerCase().includes(searchTerm.toLowerCase())
         );
 
         setCountryCards(searchResult);

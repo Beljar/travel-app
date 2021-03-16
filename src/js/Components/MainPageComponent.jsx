@@ -23,7 +23,7 @@ const MainPage = () => {
     const history = useHistory();
 
     const onSearch = (event) => {
-        if (event.constructor.name === 'SyntheticBaseEvent') {
+        if (typeof(event) === 'object') {
             event = event.target.value;
         }
         setSearchTerm(event);

@@ -27,7 +27,7 @@ export default function ExchangeRatesWidget({ from, value }) {
       className='exchange-rates-widget'
       size='small'
       header={
-        <div>
+        <div className='exchange-rates-widget-header'>
           {value} {from}
         </div>
       }

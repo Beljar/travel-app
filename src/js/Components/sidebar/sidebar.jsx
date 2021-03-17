@@ -7,7 +7,7 @@ import CurrentDate from '../date/CurrentDate.jsx';
 import ExchangeRatesWidget from '../exchange-rates-widget/exchange-rates-widget.jsx';
 
 export default function Sidebar({ countryData }) {
-  const [classes, setClasses] = useState(['sidebar', 'opened']);
+  const [classes, setClasses] = useState(['sidebar']);
 
   const toggle = () => {
     setClasses(() =>

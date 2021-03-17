@@ -28,14 +28,14 @@ export default function WeatherDisplay({city, lang}) {
 
   useEffect(() => {
     let copyCity;
-    let url = `http://api.openweathermap.org/data/2.5/weather?q=Сакраменто&units=metric&appid=afeeb4a567b04e8d0d647746c206cec1&lang=${lang}`;
+    let url = `https://api.openweathermap.org/data/2.5/weather?q=Сакраменто&units=metric&appid=afeeb4a567b04e8d0d647746c206cec1&lang=${lang}`;
 
     if(lang === 'bel'){
-      copyCity = dataCountry[city.slice(0, 1).toLowerCase() + city.slice(1)]
+      copyCity = dataCountry[city.toLowerCase()]
       if(copyCity === undefined) return;
-      url = `http://api.openweathermap.org/data/2.5/weather?q=${copyCity.slice(0, 1).toUpperCase() + copyCity.slice(1)}&units=metric&appid=afeeb4a567b04e8d0d647746c206cec1&lang=ru`;
+      url = `https://api.openweathermap.org/data/2.5/weather?q=${copyCity.slice(0, 1).toUpperCase() + copyCity.slice(1)}&units=metric&appid=afeeb4a567b04e8d0d647746c206cec1&lang=ru`;
     } else {
-      url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=afeeb4a567b04e8d0d647746c206cec1&lang=${lang}`;
+      url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=afeeb4a567b04e8d0d647746c206cec1&lang=${lang}`;
     }
 
     fetch(url)

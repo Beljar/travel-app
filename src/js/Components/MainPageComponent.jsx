@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import { useHistory } from 'react-router-dom'
 import 'antd/dist/antd.css'
 import { Layout, Input, Select } from 'antd'
@@ -6,6 +6,9 @@ import ghImg from '../assets/github-logo.png'
 import logo from '../assets/rs_school_js.svg';
 import mainLogo from '../assets/travel.svg';
 import LoginMenu from './LoginControls/LoginMenu.jsx';
+
+function requireAll(r) { r.keys().forEach(r); }
+requireAll(require.context('../assets/mainPage/country/', true, /\.jpg$/));
 
 const { Header, Content, Footer } = Layout;
 const { Search } = Input;
@@ -16,11 +19,19 @@ const MainPage = () => {
     let [selected, setSelected] = useState('ru');
     let [countries, setCountries] = useState(null);
     let [countryCards, setCountryCards] = useState([]);
+    const searchInput = useRef(null);
 
     const history = useHistory();
 
+    useEffect(() => {
+        console.log(searchInput)
+        if (searchInput) {
+            searchInput.current.focus();
+        }
+      }, [searchInput]);
+
     const onSearch = (event) => {
-        if (event.type === 'change') {
+        if (typeof(event) === 'object') {
             event = event.target.value;
         }
         setSearchTerm(event);
@@ -51,9 +62,9 @@ const MainPage = () => {
     useEffect(() => {
 
         if (countries === null) return;
-
         const searchResult = countries.filter(country =>
-            country.name.toLowerCase().includes(searchTerm.toLowerCase())
+            country.name.toLowerCase().includes(searchTerm.toLowerCase()) || 
+            country.capital.toLowerCase().includes(searchTerm.toLowerCase())
         );
 
         setCountryCards(searchResult);
@@ -73,7 +84,8 @@ const MainPage = () => {
                         onChange={onSearch}
                         allowClear
                         enterButton
-                    />
+                        ref={searchInput}
+                     />
                 </div>
                 <div className="mainLogo" onClick={() => history.push('/')}>
                     <img className="mainLogoImage" src={mainLogo} alt="mainLogo" height="50px" width="50px" />
@@ -91,11 +103,13 @@ const MainPage = () => {
                 <div className="countryCards">
                     {countryCards.map((elem, index) => {
                         return (
-                            <div className="countryCard" key={index} onClick={() => history.push(`/country/${elem.id}?lang=${selected}`)}>
-                                <img className="countryImage" src={`src/js/assets/mainPage/country/${elem.imageUrl}`} width="300px" height="200px" />
-                                <div className="cardHover">
-                                    <div className="text">{elem.name}</div>
-                                    <div className="text">{elem.capital}</div>
+                            <div className="countryCard" key={index} >
+                                <div className="countryHoverWrapper" onClick={() => history.push(`/country/${elem.id}?lang=${selected}`)}>
+                                    <img className="countryImage" src={`js/assets/mainPage/country/${elem.imageUrl}`} width="300px" height="200px" />
+                                    <div className="cardHover">
+                                        <div className="text">{elem.name}</div>
+                                        <div className="text">{elem.capital}</div>
+                                    </div>
                                 </div>
                             </div>
                         )

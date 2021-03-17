@@ -8,8 +8,8 @@ body {
 
 .no-scroll {
     height: 100vh;
+    width: calc(100vw - 17px);
     overflow: hidden;
-    padding-right: 15px;
 }
 
 .header-section {
@@ -86,11 +86,11 @@ body {
     cursor: pointer;
 }
 
-.countryCard:hover .countryImage {
+.countryHoverWrapper:hover > .countryImage {
     opacity: 0.3;
 }
 
-.countryCard:hover .cardHover {
+.countryHoverWrapper:hover > .cardHover {
     opacity: 1;
 }
 

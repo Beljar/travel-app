@@ -19,8 +19,8 @@ const MainPage = () => {
     let [selected, setSelected] = useState('ru');
     let [countries, setCountries] = useState(null);
     let [countryCards, setCountryCards] = useState([]);
+    let [loading, setLoading] = useState('false');
     const searchInput = useRef(null);
-
     const history = useHistory();
 
     useEffect(() => {
@@ -28,10 +28,10 @@ const MainPage = () => {
         if (searchInput) {
             searchInput.current.focus();
         }
-      }, [searchInput]);
+    }, [searchInput]);
 
     const onSearch = (event) => {
-        if (typeof(event) === 'object') {
+        if (typeof (event) === 'object') {
             event = event.target.value;
         }
         setSearchTerm(event);
@@ -49,12 +49,12 @@ const MainPage = () => {
 
     useEffect(() => {
         let url = `https://travel-app-be.herokuapp.com/countries?lang=${selected}`;
-
+        loading = true;
         fetch(url)
             .then(res => res.json())
             .then(json => {
-
-                setCountries(json)
+                setCountries(json);
+                setLoading(false);
             })
     }, [selected])
 
@@ -63,7 +63,7 @@ const MainPage = () => {
 
         if (countries === null) return;
         const searchResult = countries.filter(country =>
-            country.name.toLowerCase().includes(searchTerm.toLowerCase()) || 
+            country.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
             country.capital.toLowerCase().includes(searchTerm.toLowerCase())
         );
 
@@ -85,7 +85,7 @@ const MainPage = () => {
                         allowClear
                         enterButton
                         ref={searchInput}
-                     />
+                    />
                 </div>
                 <div className="mainLogo" onClick={() => history.push('/')}>
                     <img className="mainLogoImage" src={mainLogo} alt="mainLogo" height="50px" width="50px" />
@@ -100,10 +100,13 @@ const MainPage = () => {
                 </div>
             </Header>
             <Content className="site-layout">
-                <div className="countryCards">
-                    {countryCards.map((elem, index) => {
-                        return (
-                            <div className="countryCard" key={index} >
+
+                {loading ? <div className="loader-wrapper">
+                    <div className='loader'></div>
+                </div> :
+                    <div className="countryCards">
+                        {countryCards.map((elem, index) => {
+                            return (<div className="countryCard" key={index} >
                                 <div className="countryHoverWrapper" onClick={() => history.push(`/country/${elem.id}?lang=${selected}`)}>
                                     <img className="countryImage" src={`js/assets/mainPage/country/${elem.imageUrl}`} width="300px" height="200px" />
                                     <div className="cardHover">
@@ -112,9 +115,11 @@ const MainPage = () => {
                                     </div>
                                 </div>
                             </div>
-                        )
-                    })}
-                </div>
+
+                            )
+                        })}
+                    </div>}
+
             </Content>
             <Footer className="footer">
                 <a href="https://github.com/SuzyGRBT" target="_blank" rel="noreferrer" className="footer-item">

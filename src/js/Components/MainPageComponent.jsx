@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import { useHistory } from 'react-router-dom'
 import 'antd/dist/antd.css'
 import { Layout, Input, Select } from 'antd'
@@ -19,8 +19,16 @@ const MainPage = () => {
     let [selected, setSelected] = useState('ru');
     let [countries, setCountries] = useState(null);
     let [countryCards, setCountryCards] = useState([]);
+    const searchInput = useRef(null);
 
     const history = useHistory();
+
+    useEffect(() => {
+        console.log(searchInput)
+        if (searchInput) {
+            searchInput.current.focus();
+        }
+      }, [searchInput]);
 
     const onSearch = (event) => {
         if (typeof(event) === 'object') {
@@ -76,7 +84,8 @@ const MainPage = () => {
                         onChange={onSearch}
                         allowClear
                         enterButton
-                    />
+                        ref={searchInput}
+                     />
                 </div>
                 <div className="mainLogo" onClick={() => history.push('/')}>
                     <img className="mainLogoImage" src={mainLogo} alt="mainLogo" height="50px" width="50px" />
@@ -94,11 +103,13 @@ const MainPage = () => {
                 <div className="countryCards">
                     {countryCards.map((elem, index) => {
                         return (
-                            <div className="countryCard" key={index} onClick={() => history.push(`/country/${elem.id}?lang=${selected}`)}>
-                                <img className="countryImage" src={`js/assets/mainPage/country/${elem.imageUrl}`} width="300px" height="200px" />
-                                <div className="cardHover">
-                                    <div className="text">{elem.name}</div>
-                                    <div className="text">{elem.capital}</div>
+                            <div className="countryCard" key={index} >
+                                <div className="countryHoverWrapper" onClick={() => history.push(`/country/${elem.id}?lang=${selected}`)}>
+                                    <img className="countryImage" src={`js/assets/mainPage/country/${elem.imageUrl}`} width="300px" height="200px" />
+                                    <div className="cardHover">
+                                        <div className="text">{elem.name}</div>
+                                        <div className="text">{elem.capital}</div>
+                                    </div>
                                 </div>
                             </div>
                         )

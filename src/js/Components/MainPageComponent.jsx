@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import { useHistory } from 'react-router-dom'
 import 'antd/dist/antd.css'
 import { Layout, Input, Select } from 'antd'
@@ -19,11 +19,19 @@ const MainPage = () => {
     let [selected, setSelected] = useState('ru');
     let [countries, setCountries] = useState(null);
     let [countryCards, setCountryCards] = useState([]);
-
+    let [loading, setLoading] = useState('false');
+    const searchInput = useRef(null);
     const history = useHistory();
 
+    useEffect(() => {
+        console.log(searchInput)
+        if (searchInput) {
+            searchInput.current.focus();
+        }
+    }, [searchInput]);
+
     const onSearch = (event) => {
-        if (typeof(event) === 'object') {
+        if (typeof (event) === 'object') {
             event = event.target.value;
         }
         setSearchTerm(event);
@@ -41,12 +49,12 @@ const MainPage = () => {
 
     useEffect(() => {
         let url = `https://travel-app-be.herokuapp.com/countries?lang=${selected}`;
-
+        loading = true;
         fetch(url)
             .then(res => res.json())
             .then(json => {
-
-                setCountries(json)
+                setCountries(json);
+                setLoading(false);
             })
     }, [selected])
 
@@ -55,7 +63,7 @@ const MainPage = () => {
 
         if (countries === null) return;
         const searchResult = countries.filter(country =>
-            country.name.toLowerCase().includes(searchTerm.toLowerCase()) || 
+            country.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
             country.capital.toLowerCase().includes(searchTerm.toLowerCase())
         );
 
@@ -76,6 +84,7 @@ const MainPage = () => {
                         onChange={onSearch}
                         allowClear
                         enterButton
+                        ref={searchInput}
                     />
                 </div>
                 <div className="mainLogo" onClick={() => history.push('/')}>
@@ -91,19 +100,26 @@ const MainPage = () => {
                 </div>
             </Header>
             <Content className="site-layout">
-                <div className="countryCards">
-                    {countryCards.map((elem, index) => {
-                        return (
-                            <div className="countryCard" key={index} onClick={() => history.push(`/country/${elem.id}?lang=${selected}`)}>
-                                <img className="countryImage" src={`js/assets/mainPage/country/${elem.imageUrl}`} width="300px" height="200px" />
-                                <div className="cardHover">
-                                    <div className="text">{elem.name}</div>
-                                    <div className="text">{elem.capital}</div>
+
+                {loading ? <div className="loader-wrapper">
+                    <div className='loader'></div>
+                </div> :
+                    <div className="countryCards">
+                        {countryCards.map((elem, index) => {
+                            return (<div className="countryCard" key={index} >
+                                <div className="countryHoverWrapper" onClick={() => history.push(`/country/${elem.id}?lang=${selected}`)}>
+                                    <img className="countryImage" src={`js/assets/mainPage/country/${elem.imageUrl}`} width="300px" height="200px" />
+                                    <div className="cardHover">
+                                        <div className="text">{elem.name}</div>
+                                        <div className="text">{elem.capital}</div>
+                                    </div>
                                 </div>
                             </div>
-                        )
-                    })}
-                </div>
+
+                            )
+                        })}
+                    </div>}
+
             </Content>
             <Footer className="footer">
                 <a href="https://github.com/SuzyGRBT" target="_blank" rel="noreferrer" className="footer-item">

@@ -18,7 +18,7 @@ class AuthentificationProvider extends Component {
 
   async login(email, password) {
 
-    const url = 'http://travel-app-be.herokuapp.com/login';
+    const url = 'https://travel-app-be.herokuapp.com/login';
     const fParams = {
       headers: {
         'content-type': 'application/json; charset=UTF-8'
@@ -42,7 +42,7 @@ class AuthentificationProvider extends Component {
   }
 
   onSignUp({ email, password }) {
-    const url = 'http://travel-app-be.herokuapp.com/users';
+    const url = 'https://travel-app-be.herokuapp.com/users';
     const fParams = {
       headers: {
         'content-type': 'application/json; charset=UTF-8'

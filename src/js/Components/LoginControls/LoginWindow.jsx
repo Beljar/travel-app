@@ -17,11 +17,15 @@ class LoginWindow extends Component {
     this.setState({login: e.target.value})
   }
 
+  setPassword(e) {
+    this.setState({password: e.target.value})
+  }
+
   render() {
     return <div className='modal-content'>
       <form className='form'>
         <Input className='input' size="large" type="text" prefix={<MailOutlined />} id="email" name="email" placeholder="Your e-mail" onChange={this.setLogin.bind(this)}></Input>
-        <Input className='input' size="large" type="text" prefix={<LockOutlined />} id="password" name="password" placeholder="Password"></Input>
+        <Input className='input' size="large" type="text" prefix={<LockOutlined />} id="password" name="password" placeholder="Password" onChange={this.setPassword.bind(this)}></Input>
       </form>
       <AuthentificationConsumer>{(authContext) =>
         <ModalContextConsumer>{(context) =>

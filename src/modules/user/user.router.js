@@ -18,6 +18,8 @@ router.route('/:email').get(async (req, res) => {
 });
 
 router.route('/').post(async (req, res) => {
+  console.log(req);
+  console.log(req.body);
   const result = await userService.add(req.body);
   console.log(result);
   res.status(200);

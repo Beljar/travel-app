@@ -17,18 +17,25 @@ class LoginWindow extends Component {
     this.setState({login: e.target.value})
   }
 
+  setPassword(e) {
+    this.setState({password: e.target.value})
+  }
+
+  singUp(context, authContext) {
+    console.log(this.state);
+    authContext.onSignUp({email: this.state.login, password: this.state.password});
+    context.update('SignUpWindow', { show: 0 });
+  }
+
   render() {
     return <div className='modal-content'>
       <form className='form'>
       <Input className='input' size='large' type="text" id="email" name="email" prefix={<MailOutlined />} placeholder="Your e-mail" onChange={this.setLogin.bind(this)}></Input>
-      <Input className='input' size='large' type="text" id="password" name="password" prefix={<LockOutlined />} placeholder="Password"></Input>
+      <Input className='input' size='large' type="text" id="password" name="password" prefix={<LockOutlined />} placeholder="Password" onChange={this.setPassword.bind(this)}></Input>
       </form>
       <AuthentificationConsumer>{(authContext) =>
         <ModalContextConsumer>{(context) =>
-          <Button type='primary' className='btn' onClick={() => {
-            authContext.onSignUp(this.state.login, this.state.password);
-            context.update('SignUpWindow', { show: 0 });
-            }}>Sign Up</Button>}
+          <Button type='primary' className='btn' onClick={this.singUp.bind(this, context, authContext)}>Sign Up</Button>}
         </ModalContextConsumer>}
       </AuthentificationConsumer>
     </div>

@@ -4,4 +4,6 @@ const getAll = () => userRepo.getAll();
 
 const getOne = (email) => userRepo.getOne(email);
 
-module.exports = { getAll, getOne };
+const add = ({ email, password }) => userRepo.add({ email, password });
+
+module.exports = { getAll, getOne, add };

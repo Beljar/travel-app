@@ -12,5 +12,9 @@ const getByProps = async (email, password) => {
   return await User.findOne({ email: email, password: password });
 };
 
-module.exports = { getAll, getOne, getByProps };
+const add = async ({ email, password }) => {
+  return await User.create({ email, password });
+};
+
+module.exports = { getAll, getOne, getByProps, add };
 

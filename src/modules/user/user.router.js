@@ -17,4 +17,11 @@ router.route('/:email').get(async (req, res) => {
   res.json(user.toResponse());
 });
 
+router.route('/').post(async (req, res) => {
+  const result = await userService.add(req.body);
+  console.log(result);
+  res.status(200);
+  res.send();
+});
+
 module.exports = router;

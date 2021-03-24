@@ -1,42 +1,61 @@
-import React, { Component } from 'react';
+import React, { useEffect, useState } from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import { AuthentificationConsumer } from '../Authentification/AuthentificationContext.jsx';
 import { ModalContextProvider, ModalContextConsumer } from '../ModalWindows/ModalWindowsContext.jsx';
 import { Button, Input } from 'antd';
 import { MailOutlined, LockOutlined } from '@ant-design/icons';
 
-class LoginWindow extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      login: '',
-      password: ''
-    }
+const login = async (email, password) => {
+  const url = 'https://travel-app-be.herokuapp.com/login';
+  const fParams = {
+    headers: {
+      'content-type': 'application/json; charset=UTF-8'
+    },
+    body: JSON.stringify({ email, password }),
+    method: "POST"
   }
-
-  setLogin(e) {
-    this.setState({login: e.target.value})
-  }
-
-  setPassword(e) {
-    this.setState({password: e.target.value})
-  }
-
-  render() {
-    return <div className='modal-content'>
-      <form className='form'>
-        <Input className='input' size="large" type="text" prefix={<MailOutlined />} id="email" name="email" placeholder="Your e-mail" onChange={this.setLogin.bind(this)}></Input>
-        <Input className='input' size="large" type="text" prefix={<LockOutlined />} id="password" name="password" placeholder="Password" onChange={this.setPassword.bind(this)}></Input>
-      </form>
-      <AuthentificationConsumer>{(authContext) =>
-        <ModalContextConsumer>{(context) =>
-          <Button type='primary' className='btn' onClick={() => {
-            authContext.onLogin(this.state.login, this.state.password);
-            context.update('LoginWindow', { show: 0 });
-            }}>Login</Button>}
-        </ModalContextConsumer>}
-      </AuthentificationConsumer>
-    </div>
+  const res = await fetch(url, fParams);
+  console.log(res);
+  if (res.status === 200) {
+    const json = await res.json();
+    console.log(json);
+    document.cookie = `user = ${email}; `;
   }
 }
+function LoginWindow(props) {
 
-export default LoginWindow;
+  const { dispatch } = props;
+
+  let [mail, setMail] = useState(props.userName);
+  let [password, setPassword] = useState('');
+
+
+
+  return <div className='modal-content'>
+    <form className='form'>
+      <Input className='input' size="large" type="text" prefix={<MailOutlined />} id="email" name="email" placeholder="Your e-mail" onChange={(e) => setMail(e.target.value)}></Input>
+      <Input className='input' size="large" type="text" prefix={<LockOutlined />} id="password" name="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)}></Input>
+    </form>
+    <ModalContextConsumer>{(context) => <Button type='primary' className='btn' onClick={async () => {
+      await login(mail, password);
+      dispatch({ type: 'USER-NAME_CHANGE', payload: mail });
+      context.update('LoginWindow', { show: 0 });
+    }}>Login</Button>}
+    </ModalContextConsumer>
+  </div>;
+}
+
+LoginWindow.propTypes = {
+  userName: PropTypes.string,
+  dispatch: PropTypes.func,
+};
+
+const mapStateToProps = (state) => {
+  const props = {
+    userName: state.userName,
+  };
+  return props;
+};
+
+export default connect(mapStateToProps)(LoginWindow);
